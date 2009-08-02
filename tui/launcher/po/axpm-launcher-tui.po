@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-28 13:11+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: PackageManager.h:20
+msgid "<Tab>/<Alt-Tab> between elements | <space> selects"
+msgstr ""
+
+#: PackageManager.h:22
+msgid "Online Package Update - To update installed packages"
+msgstr ""
+
+#: PackageManager.h:23
+msgid "Online Package Install - To install additional packages"
+msgstr ""
+
+#: PackageManager.h:24
+msgid "Package Erase - To remove installed packages"
+msgstr ""
+
+#: PackageManager.h:25
+msgid "Setup - To configure the environment"
+msgstr ""
+
+#: PackageManager.h:27
+msgid "Next"
+msgstr ""
+
+#: PackageManager.h:28
+msgid "Cancel"
+msgstr ""
+
+#: PackageManager.h:29
+msgid "Ok"
+msgstr ""
+
+#: PackageManager.h:31
+msgid "Asianux TNS Updater"
+msgstr ""
+
+#: PackageManager.h:32
+msgid "Error"
+msgstr ""
+
+#: PackageManager.h:35
+msgid "The URL of the update server is NOT correct!"
+msgstr ""
+
+#: PackageManager.h:36
+msgid "Can NOT connect to the updater server"
+msgstr ""
+
+#: PackageManager.h:37
+msgid "Can NOT authenticate from the update server"
+msgstr ""
+
+#: PackageManager.h:38
+msgid "Unknown error occured."
+msgstr ""
+
+#: PackageManager.h:39
+msgid "Can NOT find the configuration file"
+msgstr ""
+
+#: PackageManager.h:40
+msgid "There are too many arguments."
+msgstr ""

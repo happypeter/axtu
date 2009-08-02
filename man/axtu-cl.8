@@ -1,0 +1,60 @@
+.\" (c) 2006-2008 by Haansofti Inc. (c) 2007-2008 Asianux Co., Ltd.
+.\" 
+.TH "axtu-cl" "8" "Fed 20, 2007 (v0.9)" "Asianux TSN Updater"
+.SH NAME
+axtu-cl \- Asianux TSN Updater (Command Line)
+.SH DESCRIPTION
+.TP
+axtu-cl is the command line version of AXTU.  AXTU is the Asianux TSN Updater, a program than can be used to maintain RPM packages.
+.TP
+.br
+For detail about Asianux TSN Updater, please refer to "axtu" man page.
+.SH 
+SYNOPSIS
+.TP
+.B
+axtu-cl [ -ybckdth ] [ --yes ] [ --blacklist ] [ --conflict ] [ --file=STRING ] [ --check ] [ --download ] [  --test ] [ --randome=INT ] [ --delay=INT ] [ --help ]
+.SH
+OPTIONS
+.TP
+\fB-y, --yes\fP			Update without yes/no prompts.
+.TP
+\fB-b, --blacklist\fP	Update blacklisted packages. (ignore the blacklist)
+.TP
+				(NOT recommended. Information on the "blacklist" can be found in the axtu man page)
+.TP
+\fB-c --conflict\fP		Update packages which conflict with installed packages or files. (ignore the incompatible file list
+.TP
+				(NOT recommended. Using this option may cause service or applications to fail.)
+.TP
+\fB--file=STRING\fP		Read package list from a file.
+.TP
+\fB-k, --check\fP		Check available packages.
+.TP
+\fB-d, --download\fP		Download only.
+.TP
+\fB-t, --test\fP		Test only.
+.TP
+\fB--random=INT(min.)\fP	Start update after "random" minutes, but within INT minutes.
+.TP
+\fB--delay=INT(min.)\fP 	Start update after "INT" minutes.
+.TP
+.TP
+\fB-h, --help\fP		help
+.SH
+
+EXAMPLE
+.TP
+\fBaxtu-cl -y\fP				
+.TP
+	Update all available package updates without yes/no prompting.
+.TP
+\fBaxtu --delay=5 --file=/tmp/package_lists.txt\fP	
+.TP
+	Update packages listed in "package_lists.txt" after 5 minutes
+.SH
+
+AUTHOR
+HAANSOFT INC.<www.haansoftlinux.com> and Asianux <www.aisanux.com>.
+.SH "REPORTING BUGS"
+Please report bugs to <feedback@asianux.com>

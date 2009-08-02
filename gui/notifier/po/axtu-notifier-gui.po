@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-22 18:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.c:124 main.c:144
+msgid "Asianux TSN Updater setting"
+msgstr "아시아눅스 TSN 업데이터 설정"
+
+#: main.c:154 main.c:164 main.c:169 main.c:173 main.c:171 main.c:176
+#: main.c:195 main.c:197 main.c:199
+msgid "Asianux TSN Updater"
+msgstr "아시아눅스 TSN 업데이터"
+
+#: main.c:164 main.c:173 main.c:197
+msgid "Update available pakages"
+msgstr "업데이트 가능 패키지"
+
+#: main.c:164 main.c:173 main.c:197
+msgid "Please update now"
+msgstr "업데이트를 실행하여 주십시오"
+
+#: main.c:169
+msgid "There are no update packages"
+msgstr "업데이트 할 패키지가 없습니다"
+
+#: main.c:174 main.c:208 main.c:171 main.c:195
+msgid "Update is not registered."
+msgstr "제품이 등록 되어있지 않습니다."
+
+#: main.c:174 main.c:208 main.c:171 main.c:195
+msgid "Please register now"
+msgstr "제품을 등록하여 주십시오."
+
+#: main.c:40
+msgid "Notifier - Asianux TSN Updater"
+msgstr "Notifier - 아시아눅스 TSN 업데이터"
+
+#: main.c:69
+msgid "Fail to execute Updater"
+msgstr "업데이터 실행 실패"
+
+#: main.c:100
+msgid "Fail to execute Setup"
+msgstr "설정 실행 실패"
+
+#: main.c:123
+msgid "Do you want to exit?"
+msgstr "프로그램을 종료 하시겠습니까?"

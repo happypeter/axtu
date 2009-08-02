@@ -1,0 +1,217 @@
+2007-12-03 Yusop Kim <yusop@haansoft.com>
+	* Makefile.am,Makefile.in: add a script to remove the *.qm files
+	* gui/axtu/classGui.cpp,tui/axtu/main.cpp,libs/classAuthen.cpp,libs/classAuthen.h,libs/classNetwork.h: add a function for termination according to return value of axtu-authen-client
+	* tui/axtu/classTui.cpp: modify some log routine from "DEBUG_LOG" to "ERROR_LOG"
+	
+2007-11-30 Yusop Kim <yusop@haansoft.com>
+	* libs/classNetwork.h,libs/classNetwork.cpp: remove copyright comments
+
+2007-11-29 Yusop Kim <yusop@haansoft.com>
+	* libs/classLogger.h: change the level of visible of the method - check_strlen() - from "private" to "public"
+
+2007-11-28 Yusop Kim <yusop@haansoft.com>
+	* libs/classConfCtl.cpp,h: modify for permission of configure file and add comments
+
+2007-11-19 Yusop Kim <yusop@haansoft.com>
+	* libs/classConfCtl.cpp: modify a ConfigCheck() method - Although reading a new-conf-file is failed, the result is true. Because this is not effectable to this program.
+
+2007-09-06 Yusop Kim <yusop@haansoft.com>
+	* tui/axtu/classTui.cpp: Remove the cancel button for ProgressPages ( Bug #3418, #3410 )
+	* libs/classDownloader.cpp,libs/classDownloader.h,libs/classNetwork.cpp,libs/classNetwork.h: Changed a timeout value the for downloading and Added error types
+	* tarball01/axtu/gui/axtu/qm/axtu_zh_CN.ts,tarball01/axtu/gui/axtu/qm/axtu_zh_TW.ts,tarball01/axtu/gui/setup/qm/axtu_setup_zh_CN.ts,tarball01/axtu/gui/setup/qm/axtu_setup_zh_TW.ts: There is changed language files by request of the RedFlag.
+
+2007-08-31 Yusop Kim <yusop@haansoft.com>
+	* tui/axtu/classTui.cpp:On tui, If it occur a error for dependency, the error-window show an error-message with a path of log-file. The path and a message was not distincted. But now this bug is fixed.( Bug # 3399 )
+	* tui/axtu/classTui.cpp,tui/axtu/classTui.h,tui/setup/axtu_setup.cpp,tui/setup/axtu_setup.h:There are some selectable items, and we can push "next" button or whatever effectable. I just added a message - "No packages selected." ( Bug # 3400, # 3402 )
+
+2007-08-29 Yusop Kim <yusop@haansoft.com>
+	* When some headerFiles(*.hdr) are downloaded, the progress-bar's actions were wrong. But now I've fixed this problem. ( Bug # 3434 )
+	* libs/classDownloader.cpp,libs/classDownloader.h,libs/classNetwork.cpp,libs/wget/http.c,libs/wget/retr.c,libs/wget/retr.h:Add a variable for downloading status, and Modify a callback function routine to use the variable.
+	* gui/axtu/classGui.h,gui/axtu/qm/axtu_ja.ts,gui/axtu/qm/axtu_ko.ts,gui/axtu/qm/axtu_zh_CN.ts,gui/axtu/qm/axtu_zh_TW.ts:Change come out messages, when some files are downloaded
+	* TODO: Deleting a useless file.
+
+2007-08-11 Yusop Kim <yusop@haansoft.com>
+	* libs/classConfCtrl.cpp:Modify for an Error execption.
+
+2007-08-10 Yusop Kim <yusop@haansoft.com>
+	* gui/axtu/classGui.cpp,libs/classAuthen.cpp,libs/classAuthen.h,libs/classNetwork.cpp,libs/classNetwork.h,tui/axtu/classTui.cpp,tui/axtu/classTui.h,tui/axtu-cl/main.cpp,tui/launcher/PackageManager.c,tui/launcher/PackageManager.h:If there is not axtu-authen-client, the axtu will emit an error message (Bug # 3427)
+
+2007-08-09 Yusop Kim <yusop@haansoft.com>
+	* daemon/axtu-daemon.cpp,gui/axtu/classGui.cpp,libs/classAuthen.cpp,libs/classAuthen.h,libs/classNetwork.cpp,libs/classNetwork.h,tui/axtu/classTui.cpp:Change the load method from detecting the environment to pointing the binary directly.(Bug # 3442)
+	* tui/axtu/classTui.cpp:Bug fix for reloading the HeaderInformation after update or install. Before the fixing, the doing update or install with some dependency occured different action. That is not doing the reload action the header files.(Bug # 3425)
+
+2007-08-06 Yusop Kim <yusop@haansoft.com>
+	* tui/axtu/classTui.cpp,h,tui/axtu/main.cpp: Bug fix that cannot restart at doing Self-Update on TUI.(Bug # 3424)
+
+2007-08-01 Yusop Kim <yusop@haansoft.com> , JeongHun Kim <jhkim@haansoft.com>
+	* gui/axtu/classGui.h,gui/axtu/qm/*.ts,libs/classRpmEngine.cpp:Modify the wrong word from "Reading header informaintion..." to "Reading header information..." (Bug # 3376)
+	* libs/classAuthen.cpp: Remove the message that come out by the AuthenticationTool - CommandLine
+	* libs/classConfig.cpp, libs/classConfig.h, gui/setup/classSetup.cpp, gui/setup/classSetup.h, libs/hsCommon.h, gui/setup/ui/frmSetup.ui,  gui/setup/qm/*.ts  : Add proxy configuration ui to axtu setup.
+
+2007-07-30 Yusop Kim <yusop@haansoft.com>
+	* libs/classLogger.cpp,libs/classConfigParser.cpp,h:Bug Fix for LOG-file.(Bug:If there is not a directory for LOG, the LogFile put wrong place.) Fixed that bug.(Bug # 3364)
+	* tui/axtu/classTui.cpp,h,tui/launcher/PackageManager.c,h:Bug Fix for disk-space-error( Bug: If there is an error for disk-space-error, cannot show the message On tui) Fixed that bug.(Bug # 3365)
+
+2007-07-27 Yusop Kim <yusop@haansoft.com>
+	* libs/classRpmEngine.cpp:Bug Fix for come out the message from each RPM file on TUI during the update or install time(Bug # 3183)
+
+2007-07-23 Yusop Kim <yusop@haansoft.com>
+	* libs/wget/conf/.wgetrc: Add the default configure file for WGET
+	* libs/wget/init.c: Modify to read the default configure file
+	* libs/classDownloader.cpp,libs/classDownloader.h: Add the method to set the timeout value of the connection
+
+2007-07-17 Yusop Kim <yusop@haansoft.com>
+	* sh/axtu: Modifing a miswrited word,Remoing the ERASE option
+	* libs/classAuthen.cpp,h: Modifing the path of Authentication Client and improve the code
+	* libs/classNetwork.cpp.h,tui/axtu/classTui.cpp: Improve the code
+	* man/axtu.1: Remoing the ERASE option
+
+2007-07-16 JeongHun Kim <jhkim@haansoft.com> 
+	* libs/classRpmEngine.cpp: Modify for Self Update
+
+2007-07-16 Yusop Kim <yusop@haansoft.com>
+	* sh/axtu,libs/classAuthen.cpp,h:Seperating the binary according to user interface.Because the users have different envirnments.
+
+2007-07-04 Yusop Kim <yusop@haansoft.com>
+	* tui/setup/axtu_setup.cpp: Fixing the bug that cannot insert some packages to blacklist on TUI. That is caused by mis-putting the destroyer of the newt.
+
+2007-05-31 JeongHun Kim <jhkim@haansoft.com> 
+	* the distance between the lines and the characters are different in the welcome page of axtu (bug#2768)
+	* RVD- suggestion for axtu self-update(bug#2767)
+	* problem for axtu-cl(bug#2751)
+	* there is no warning when the space is not enough(bug#2744)
+	* install list has the package which is already installed on the system(bug#2729)
+	* RV- can not set default value for blacklist(bug#2722)
+	* can not start axtu from the control panel(bug#2638)
+	* rpm's license may change GPL/LGPL(2343)
+	* after minimizing updater which is opened from tray icon,it disapeared from the screen(bug#2710)
+	* the characters in the axtu interface can not be showed fully(bug#2639)
+
+2007-05-31 Yusop Kim <yusop@haansoft.com>
+	* sh/axtu: Adding " 2>/dev/null"
+
+2007-05-30 Yusop Kim <yusop@haansoft.com>
+	* libs/classNetwork.cpp: Adding " 2>/dev/null" in "mv" command line
+
+2007-05-29 Yusop Kim <yusop@haansoft.com>
+	* libs/classNetwork.cpp,h: Add error code for FWRITE ERROR 
+	* tui/axtu/classTui.cpp,h,tui/launcher/PackageManager.h: Modify the code for FWRITE ERROR
+
+2007-05-24 Yusop Kim <yusop@haansoft.com>
+	* configure.ac,daemon/Makefile.am,gui/notifier/Makefile.am,tui/axtu/Makefile.am,tui/axtu-cl/Makefile.am,tui/launcher/Makefile.am,tui/setup/Makefile.am:Modifing the macros - libdir, prefix, mandir
+
+2007-05-21 Yusop Kim <yusop@haansoft.com>
+	* TODO: Add a file for to-do-list
+	* configure.ac,libs/Makefile.am,man/Makefile.am,tui/axtu/Makefile.am: Modifing the macros
+	* gui/axtu/classGui.h,gui/launcher/classLauncher.h,gui/notifier/main.c,libs/classAuthen.h,libs/hsCommon.h,axtu/sh/axtu,axtu/sh/axtud,axtu/sh/xaxtu-notifier.sh,axtu/sh/xaxtud.sh,tui/axtu/classTui.h,tui/launcher/PackageManager.h: Change the Prefix directory (axtu-1.1)
+
+2007-05-11 Yusop Kim <yusop@haansoft.com>
+	* libs/smp.c,h: Soving the problem that don't work PPC platform 
+
+2007-05-10 Yusop Kim <yusop@haansoft.com>
+	* tui/axtu-cl/main.cpp,libs/classNetwork.cpp,h: If the Command-line updater cannot get AK, it will be stop
+
+2007-05-09 JeongHun Kim <jhkim@haansoft.com> 
+	* gui/notifier/main.cpp: When axtu is not authenticated, notifier will not showned. so I have fixed.
+	    result : When axtu is not authenticated, notifier will show message("Please register now.").
+
+2007-05-05 Yusop Kim <yusop@haansoft.com>
+	* tui/axtu/classTui.cpp: Initializing of "bAct" variable in show_UpdateInstallProgressPage
+
+2007-05-04 Yusop Kim <yusop@haansoft.com>
+	* configure.ac: Modifying the copy routine for configure file according to product name
+	* conf/*:Modifying the configure files
+	* libs/classNetwork.cpp: Adding the clear routine for m_vectorRepoInfo in ReadRepoInfo()
+
+2007-04-30 Yusop Kim <yusop@haansoft.com>
+	* libs/classRpmEngine.cpp: Adding the clear routine for m_vectorCacheDirInfo in ReadCacheDirInfo()
+	* libs/classNetwork.cpp: Adding the ReadRepoInfo() in SetDownloadConfig()
+	* gui/axtu/classGui.cpp,tui/axtu/classTui.cpp: Adding the ReadCacheDirInfo() routine
+
+2007-04-26 Yusop Kim <yusop@haansoft.com>
+	* libs/classConfCtl.cpp: Fixing the problem of copy the configure files
+	* gui/axtu/classGui.cpp,tui/axtu/classTui.cpp: Inserting CheckConfig API after checking Authentication
+	* gui/setup/classSetup.cpp: When the default-configure-file do not exist the default-loading-button is disabled.
+
+2007-04-24 JeongHun Kim <jhkim@haansoft.com> 
+	* sh/axtu,axtu-notifier : Edit axtu, axtu-notifier file that are script for starting daemon.
+	* libs/classAuthen.cpp : Add a fuctions that will be delete gargege file(/var/tmp/axTK* file)
+	* Many file : Change UI and add new icons fils.
+	* gui/notifier/main.c : Even if user do double click update icon,  kdesu will execute by once.
+	* libs/classRpmEngine.cpp : Some big size packages( jre ) show wrong progress. int type has been changeed to float type.
+	
+
+2007-04-14 Yusop Kim <yusop@haansoft.com>
+	* tui/axtu/classTui.cpp:For the "axtu" and "axtu-authen-client" run at the same time, I insert that newtSuspend(),newtResume()
+
+2007-04-13 Yusop Kim <yusop@haansoft.com>
+	* libs/Makefile.am,libs/wget/Makefile.am: Fixing the bug that libhswget.a is softly linked. The library must be hardly linked.
+	* configure.ac:Modify by adding of the release name - binari
+	* conf/axtu.conf.DT3-32,conf/axtu.conf.DT3-64: Add Address file for DT
+	* classAuthen.h: Change the authentication tool's name
+	* libs/classRpmEngine.cpp,libs/classNetwork.cpp,h,gui/axtu/classGui.cpp,tui/axtu/classTui.cpp: Modified that the authentication rootine do not run before self update. 
+	* libs/classRpmEngine.cpp,h,gui/axtu/classGui.cpp: When the kernel is updated, AXTU will notify that kernel will be applied by system reboot.
+	* libs/classAuthen.cpp: Change the code from 'exit(0)' to 'return false;' in SetAk method
+
+2007-04-12 JeongHun Kim <jhkim@haansoft.com> 
+	* gui/classGui.cpp, classRpmEngine.cpp,h libs/smp.c,h : Add check routine that can check smp available or not.  If system does not support smp, all smp packages will move to install list from update list even if the packages are update packages.
+	* axtu.spec : Add one line (/etc/init.d/axtu-notifier)  
+
+2007-04-01 Yusop Kim <yusop@haansoft.com>
+	* libs/Makefile.am,libs/wget/Makefile.am,tui/axtu/Makefile.am,tui/axtu-cl/Makefile.am,tui/setup/Makefile.am:modify to the libaxtu_shared.so include the libhswget.a
+	* daemon/Makefile.am,gui/Makefile.am,gui/axtu/axtu.pro,gui/launcher/launcher.pro,gui/notifier/Makefile.am,gui/setup/setup.pro:remove the link option with hswget. because libaxtu_shared.so include the libhswget.a
+	* libs/classAuthen.cpp,libs/classAuthen.h,libs/classNetwork.cpp:modify the authentication routine according to be modifying the authentication_client. ex) method of making the tk - the routine is changed by using whole tk string from dividing.
+	* libs/classConfCtl.cpp: bug fix by an empty space section. 
+	* libs/classDownloader.cpp,libs/classDownloader.h,libs/wget/hswgetlib.h,libs/wget/init.h,libs/wget/retr.c: Add the option of "wget" for certification - authentication
+	* libs/hsCommon.h: Add definition of "AUTHEN_FILE"
+
+2007-03-29 Yusop Kim <yusop@haansoft.com>
+	* sh/axtu:the script file is modified. Because CommandLine Update function do not need to show users
+
+2007-03-29 JeongHun Kim <jhkim@haansoft.com> 
+	* Tray Image has changed.
+	* Configure file(/etc/axtu/axtu.conf) can includes comments.  (before patch axtu alway erases any comments (that will start "#") ).
+	* When files are downloading. User can cancel download. (before User can not stop download) 
+
+2007-03-27 JeongHun Kim <jhkim@haansoft.com> 
+	* sh/axtu tui/axtu/main.cpp : When start axtu by user account(Not root) on init 5 mode. If you type "#axtu -u" You can not start axtu by error. bug has fixed.
+
+2007-03-26 JeongHun Kim <jhkim@haansoft.com>
+	* tui/axtu-cl/main.cpp : Add only download functions and update check fuction.
+	
+2007-03-23 JeongHun Kim <jhkim@haansoft.com>
+	* libs/classLogger.h , libs/classRpmEngine.cpp, tui/axtu-cl/* : New axtu-cl(command line updater) for auto update has added.
+	
+2007-03-20 JeongHun Kim <jhkim@haansoft.com>
+	* libs/classRpmEngine.cpp : rpm transaction is locking while axtu executes.   ==> It's solved. 
+	* libs/classRpmEngine.cpp,h gui/classGui.cpp gui/main.cpp tui/classTui.cpp : We want to block a blacklist package by update only(Not install).   but axtu blockes a package even if a package will be installed when depedency check time. 
+	
+2007-03-13 JeongHun Kim <jhkim@haansoft.com>
+	* doxygen_axtu.conf : axpm text was not change to axtu. I have changed.
+	* libs/classRpmEngine.cpp : TSN Updater locked rpm transaction while updater is on exectute time. I modified that bug.  
+	* gui/axtu/classGui.cpp,h : When show dependency list to user.   Messages is not translated to local languages.  It 's fixed.
+	
+2007-03-11 Yusop Kim <yusop@haansoft.com>
+	* libs/classRpmEngine.cpp,h: The return type of CreateUpdateInstallList() method is modified from "int" to "bool". And an ErrorMessageLog is added to in that method
+	* tui/axtu/classTui.cpp,h: A Changing return type is applied to in vectorLoad() method. And A message that could not create PackageList is added in Tui.
+	* gui/axtu/classGui.cpp: A Changing return type is applied. And A message that could not create PackageList is added in Gui.
+
+2007-03-08 JeongHun Kim <jhkim@haansoft.com>
+	* gui/axtu/classGui.cpp: Modifed to restarted at self-update in GUI
+	* gui/axtu/main.cpp: Modifed to restarted at self-update in GUI
+
+2007-03-08 Yusop Kim <yusop@haansoft.com>
+	* conf/*: Add Self Address 
+	* libs/classRpmEngine.cpp: Add Protecting Method for Unlimited loop
+
+2007-03-08 Yusop Kim <yusop@haansoft.com>
+	* Text strings of TUI are modified for main title "Asianux TSN Updater"
+	* Modifing the "axpm" script for help message
+
+2007-03-08 JeongHun Kim <jhkim@haansoft.com>
+	* Multi langueage supportting code is fixed. Upater had a bug that some part of language is not changed to korean or other language.
+	* When User account (NOT root) will executes TSN Updater.   Updater will requires password to root.
+	* CreateUpdateInstall() function on classRpmEngine.cpp is fixed. Some case this function went to the loop states.
+
+2007-03-05 Yusop Kim <yusop@haansoft.com>	
+	* Project Rename from axpm to axtu

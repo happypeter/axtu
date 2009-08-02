@@ -1,0 +1,15 @@
+[main]
+removepackages = true
+cachedir = /var/cache/axtu
+logdir = /var/log/axtu
+alarm_period = 2
+alarm = true
+apply_blacklist = true
+
+[base]
+name = Asianux - Base
+baseurl = Input url
+
+[updates-released]
+name = Asianux- Update
+baseurl = Input url

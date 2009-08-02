@@ -1,0 +1,38 @@
+# This is the main Asianux TSN Updater configuration file.
+# Please do NOT modify the left-hand-side of the configuration parameters!
+
+### Section 1: TSN Updater Configuration
+# removepackages : It can be "true" or "false". When set "false", the Asianux TSN updater removes any downloaded packages after the update completes.
+# cachedir : A temporary directory where target packages are stored after download.
+# logdir : A directory where target log files are stored.
+# alarm_period : The frequency of how often the Asianux TSN Updater should check for updated packages on the update servers.
+#                 (Minimum 1 hour, Maximum 72 hours)
+# alarm : "true" or "false". Set to "true" to show the Asianux TSN Update icon in the system tray when updates are available. Default=true
+# apply_blacklist : "true" or "false". Set to "true" to apply blacklist to update notification. Default=true
+# authen : Set to "true" to use authenticated connection to Asianux TSN Update server. Default=true
+
+
+[main]
+removepackages = true
+cachedir = /var/cache/axtu
+logdir = /var/log/axtu
+alarm_period = 2
+alarm = true
+apply_blacklist = true
+authen = true
+
+### Section 2: URLs of the TSN server.
+# Following URLs are updated automatically.
+# Changes to the 'base', 'updates-released' and 'self' sections will be lost when axtu is executed.
+
+[base]
+name = Asianux - Base
+baseurl = http://update.asianux.com/auth/asianux/AX3.0/ppc/OS/RPMS
+
+[updates-released]
+name = Asianux - Update
+baseurl = http://update.asianux.com/auth/asianux/AX3.0/ppc/UPDATE/RPMS
+
+[self]
+name = Asianux - Self
+baseurl = http://update.asianux.com/auth/asianux/AX3.0/ppc/SELF/RPMS

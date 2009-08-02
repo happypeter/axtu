@@ -1,0 +1,20 @@
+[main]
+removepackages = true
+cachedir = /var/cache/axtu
+logdir = /var/log/axtu
+alarm_period = 2
+alarm = true
+apply_blacklist = true
+authen = true
+
+[base]
+name = Asianux Desktop 3.0 - Base
+baseurl = http://update.asianux.co.kr/auth/asianux/OS/3/Desktop/i386/RPMS
+
+[updates-released]
+name = Asianux Desktop 3.0 - Update
+baseurl = http://update.asianux.co.kr/auth/asianux/UPDATE/3/Desktop/i386/RPMS
+
+[self]
+name = Asianux Desktop 3.0 - Self
+baseurl = http://update.asianux.co.kr/auth/asianux/SELF/3/Desktop/i386/RPMS

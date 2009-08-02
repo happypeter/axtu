@@ -1,0 +1,281 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-28 13:02+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: classTui.h:48
+msgid "<Tab>/<Alt-Tab> between elements | <space> selects"
+msgstr ""
+
+#: classTui.h:49
+msgid "Press <F1> for more information on a Package"
+msgstr ""
+
+#: classTui.h:50
+msgid "Update Wizard"
+msgstr ""
+
+#: classTui.h:51
+msgid "Install Wizard"
+msgstr ""
+
+#: classTui.h:52
+msgid "Erase Wizard"
+msgstr ""
+
+#: classTui.h:53
+msgid "New AXTU packages have been detected."
+msgstr ""
+
+#: classTui.h:54
+msgid "Available updated packages have been found."
+msgstr ""
+
+#: classTui.h:55 classTui.h:57
+msgid "No target package has been found."
+msgstr ""
+
+#: classTui.h:56
+msgid "Available packages have been found."
+msgstr ""
+
+#: classTui.h:58
+msgid "Target packages are listed."
+msgstr ""
+
+#: classTui.h:59
+msgid "There are not erase packages"
+msgstr ""
+
+#: classTui.h:61
+msgid ""
+"New AXTU packages have been detected. You must update those packages first."
+msgstr ""
+
+#: classTui.h:62
+msgid "List of available packages for update"
+msgstr ""
+
+#: classTui.h:66
+msgid "Next >"
+msgstr ""
+
+#: classTui.h:67
+msgid "< Prev"
+msgstr ""
+
+#: classTui.h:68
+msgid "Set Black List"
+msgstr ""
+
+#: classTui.h:69
+msgid "Done"
+msgstr ""
+
+#: classTui.h:70
+msgid "Restart"
+msgstr ""
+
+#: classTui.h:71
+msgid "Retry"
+msgstr ""
+
+#: classTui.h:72
+msgid "Cancel"
+msgstr ""
+
+#: classTui.h:73
+msgid "Reload"
+msgstr ""
+
+#: classTui.h:74
+msgid "Ok"
+msgstr ""
+
+#: classTui.h:75
+msgid "Yes"
+msgstr ""
+
+#: classTui.h:76
+msgid "No"
+msgstr ""
+
+#: classTui.h:77
+msgid "Available package list"
+msgstr ""
+
+#: classTui.h:78
+msgid "These packages are available to udpate."
+msgstr ""
+
+#: classTui.h:79
+msgid "There is no package available."
+msgstr ""
+
+#: classTui.h:80
+msgid "Total Count : "
+msgstr ""
+
+#: classTui.h:81
+msgid ""
+"Some blacklisted packages are required for dependencies from packages you "
+"have chosen.\n"
+"You should delete following packages from the blacklist in order to continue."
+msgstr ""
+
+#: classTui.h:84
+msgid "Select a updating Method"
+msgstr ""
+
+#: classTui.h:85
+msgid "Error"
+msgstr ""
+
+#: classTui.h:88
+msgid " Full Update "
+msgstr ""
+
+#: classTui.h:89
+msgid " Custom Update "
+msgstr ""
+
+#: classTui.h:91
+msgid "Processing..."
+msgstr ""
+
+#: classTui.h:92
+msgid "Total Progress"
+msgstr ""
+
+#: classTui.h:93
+msgid "Current Progress"
+msgstr ""
+
+#: classTui.h:95
+msgid "The update progress has been completed!"
+msgstr ""
+
+#: classTui.h:96
+msgid "The install progress has been completed!"
+msgstr ""
+
+#: classTui.h:97
+msgid "The erase progress has bee completed!"
+msgstr ""
+
+#: classTui.h:99
+msgid "The udpate has failed!"
+msgstr ""
+
+#: classTui.h:100
+msgid "The install has failed!"
+msgstr ""
+
+#: classTui.h:101
+msgid "The erase has failed!"
+msgstr ""
+
+#: classTui.h:103
+msgid "The update has been completed! It will restart now."
+msgstr ""
+
+#: classTui.h:104
+msgid "The update has failed!"
+msgstr ""
+
+#: classTui.h:106
+msgid "Dependency Alert"
+msgstr ""
+
+#: classTui.h:107
+msgid "Some selected packages have dependent packages."
+msgstr ""
+
+#: classTui.h:108
+msgid "Would you like to continue?"
+msgstr ""
+
+#: classTui.h:109
+msgid "Please select packages you want to update."
+msgstr ""
+
+#: classTui.h:110 classTui.h:112 classTui.h:114
+msgid "No package is available."
+msgstr ""
+
+#: classTui.h:111
+msgid "Please select packages you want to install."
+msgstr ""
+
+#: classTui.h:113
+msgid "Please select packages you want to erase."
+msgstr ""
+
+#: classTui.h:116
+msgid "Confirmation"
+msgstr ""
+
+#: classTui.h:117
+msgid "Do you want to Update?"
+msgstr ""
+
+#: classTui.h:118
+msgid "Do you want to Install?"
+msgstr ""
+
+#: classTui.h:119
+msgid "Do you want really to erase?"
+msgstr ""
+
+#: classTui.h:121
+msgid "The URL of the update server is NOT correct."
+msgstr ""
+
+#: classTui.h:122
+msgid "Check update-server address in the configuration file"
+msgstr ""
+
+#: classTui.h:123
+msgid "Not able to connect to the update server!"
+msgstr ""
+
+#: classTui.h:124
+msgid "Please check the network connection!"
+msgstr ""
+
+#: classTui.h:125
+msgid "Not able to authenticate from the update server."
+msgstr ""
+
+#: classTui.h:126
+msgid "A unknown error occured."
+msgstr ""
+
+#: classTui.h:127
+msgid "Can NOT find configuration file"
+msgstr ""
+
+#: classTui.h:128
+msgid "Required packages have NOT been found!"
+msgstr ""
+
+#: classTui.h:130
+msgid "See a log file"
+msgstr ""
+
+#: classTui.h:131
+msgid "Select All packages"
+msgstr ""

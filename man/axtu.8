@@ -1,0 +1,100 @@
+.\" (c) 2006-2007 by Haansofti Inc. (c) 2007 Asianux Co., Ltd.
+.\" 
+.TH "axtu" "8" "Fed 20, 2007 (v0.9)" "Asianux TSN Updater"
+.SH NAME
+axtu \- Asianux TSN Updater
+.SH DESCRIPTION
+.TP
+Asianux TSN Updater provides the following services:
+.TP
+\fBOnline Package Update \fP
+With Online Package Update, you can update the packages installed on your system to the latest packages available from our update server(s). If you manually installed some software or packages, please choose "Custom Update" and do NOT select those manually installed software or packages to prevent them from being updated.
+.TP
+.PP
+\fBBlacklist Button :\fP
+You can select packages you do not want to update with the "Blacklist" button. The blacklisted packages will NOT be updated or installed even if you choose the "Full Update" option during the process.
+.TP
+.PP
+\fBTray Icon :\fP
+When Asianux TSN Updater is run in a GUI environment, a tray icon will appear in the System Tray. The tray icon will show when new packages are available on the update server(s).
+.TP
+\fBOnline Package Install\fP
+Additional packages, which are not installed on your system, can be installed from the update server(s) with Online Package Install.
+.TP
+\fBSetup         		 \fP
+Configuration of Asianux TSN Updater.  
+.TP
+.PP
+\fBUpdate Server :\fP
+The URL of the update server(s): "base", "updates-released" and "self" are mandatory sections. "base" includes base packages r
+equired to fulfill package dependencies. "updates-released" provides the latest packages for both update and install. "self" provides the late
+st axtu-related packages.
+.TP
+.PP
+\fBPath :\fP
+Enter directories for the "Download Path" and the "Log Path". The "Download Path" is a temporary directory where the target pa
+ckages are downloaded. Packages can automatically be deleted after update or install by checking the check box. The log files will be stored i
+n the directory entered in "Log Path"
+.TP
+.PP
+\fBNotifier:\fP
+When the notifier is activated, the Asianux TSN Update icon in the system tray will appear. You can change this behavior in th
+e Notifier box. You can also decide how often Asianux TSN Update will check for updates in the frequency box. If you want to ignore the blackl
+isted packages when checking for available updated packages, tick the check box in the  "Blacklist notifications" section.
+.TP
+.PP
+\fBBlacklist :\fP
+The blacklisted packages will NOT be updated or installed even if the "Full Update" option is selected during the process. A warning window will pop up if some of the blacklisted packages are required by other selected packages.
+.TP
+.PP
+Ex) If you have manually installed MySQL database, you may add MySQL and the related packages to the blacklist so that they do not get updated.
+.TP
+.PP
+\fBLog View :\fP
+You can search and view the logs here.
+.SH 
+SYNOPSIS
+.B
+axtu
+.br 
+.B
+axtu [OPTION(s)]
+.SH
+OPTIONS
+.TP
+\fB-t\fP	Launcher in TUI mode
+.TP
+\fB-u\fP	Online Package Update Wizard
+.TP
+\fB-i\fP	Online Package Install Wizard
+.TP
+\fB-s\fP	Setup
+.TP
+\fB-n\fP	Notifier(Tray icon)
+.TP
+.\".TP
+\fB-h(--help)\fP	help page
+
+.SH
+EXAMPLE
+.TP
+\fBaxtu\fP    axtu  # Asianux TSN Updater Launcher (in GUI if available or in TUI) 
+.TP
+\fBaxtu -ti\fP	axtu -ti # Online Package Install in TUI
+.SH
+
+PATHS
+.TP
+\fBConfiguration File\fP
+\fI/etc/axtu/axtu.conf\fR
+.TP
+\fBDefault Temporary Storage Directory\fP 
+\fI/var/cache/axtu\fR   #Please ensure that the directory has enough space. 
+.TP
+\fBDefault Log Path\fP 
+\fI/var/log/axtu\fR  
+.SH 
+AUTHOR
+HAANSOFT INC.<www.haansoftlinux.com>,  Asianux <www.aisanux.com> under GPL
+.SH "REPORTING BUGS"
+Please report bugs to JeongHun Kim <jhkim@haansoft.com>

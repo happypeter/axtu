@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: axtu 1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-02 14:26+0900\n"
+"PO-Revision-Date: 2007-06-08 11:08+0800\n"
+"Last-Translator: Bo Wang <bowang@redflag-linux.com>\n"
+"Language-Team: Chinese (simplified) <support@redflag-linux.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.c:124
+msgid "Asianux TSN Updater setting"
+msgstr "Asianux TSN 更新設置"
+
+#: main.c:154 main.c:164 main.c:169 main.c:173
+msgid "Asianux TSN Updater"
+msgstr "Asianux TSN 更新"
+
+#: main.c:164
+msgid "Update available pakages"
+msgstr "更新現有的包"
+
+#: main.c:164
+msgid "Please update now"
+msgstr "請立刻更新 "
+
+#: main.c:169
+msgid "There are no update packages"
+msgstr "未找到更新包"
+
+#: main.c:174 main.c:208
+msgid "Update is not registered."
+msgstr "產品未註冊"
+
+#: main.c:174 main.c:208
+msgid "Please register now"
+msgstr "請立即註冊 "
+
+#: main.c:40
+msgid "Notifier - Asianux TSN Updater"
+msgstr "Notifier - Asianux TSN 升級程序"
+
+#: main.c:69
+msgid "Fail to execute Updater"
+msgstr ""
+
+#: main.c:100
+msgid "Fail to execute Setup"
+msgstr ""
+
+#: main.c:123
+msgid "Do you want to exit?"
+msgstr "您確定要退出嗎?"

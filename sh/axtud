@@ -1,0 +1,3 @@
+#!/bin/sh
+killall axtu-daemon 2> /dev/null
+/usr/share/axtu/daemon/axtu-daemon &

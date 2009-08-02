@@ -1,0 +1,19 @@
+[main]
+removepackages = true
+cachedir = /var/cache/axtu
+logdir = /var/log/axtu
+alarm_period = 2
+alarm = true
+apply_blacklist = true
+
+[base]
+name = Asianux - Base
+baseurl = http://community.asianux.co.kr/pub/haansoftlinux/OpenEdition/3.0/release/x86_64/OS/RPMS
+
+[updates-released]
+name = Asianux - Update
+baseurl = http://community.asianux.co.kr/pub/haansoftlinux/OpenEdition/3.0/release/x86_64/UPDATE/RPMS
+
+[self]
+name = Asianux - Self
+baseurl = http://community.asianux.co.kr/pub/haansoftlinux/OpenEdition/3.0/release/x86_64/SELF/RPMS

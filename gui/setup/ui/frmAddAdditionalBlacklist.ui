@@ -1,0 +1,374 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>frmAddAdditionalBlacklist</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>frmAddAdditionalBlacklist</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>476</width>
+            <height>131</height>
+        </rect>
+    </property>
+    <property name="palette">
+        <palette>
+            <active>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>238</red>
+                    <green>238</green>
+                    <blue>230</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>246</red>
+                    <green>246</green>
+                    <blue>242</blue>
+                </color>
+                <color>
+                    <red>119</red>
+                    <green>119</green>
+                    <blue>115</blue>
+                </color>
+                <color>
+                    <red>158</red>
+                    <green>158</green>
+                    <blue>152</blue>
+                </color>
+                <color>
+                    <red>37</red>
+                    <green>67</green>
+                    <blue>127</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>238</red>
+                    <green>238</green>
+                    <blue>230</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>74</red>
+                    <green>121</green>
+                    <blue>205</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>192</blue>
+                </color>
+                <color>
+                    <red>128</red>
+                    <green>0</green>
+                    <blue>128</blue>
+                </color>
+            </active>
+            <disabled>
+                <color>
+                    <red>128</red>
+                    <green>128</green>
+                    <blue>128</blue>
+                </color>
+                <color>
+                    <red>238</red>
+                    <green>238</green>
+                    <blue>230</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>119</red>
+                    <green>119</green>
+                    <blue>115</blue>
+                </color>
+                <color>
+                    <red>158</red>
+                    <green>158</green>
+                    <blue>152</blue>
+                </color>
+                <color>
+                    <red>37</red>
+                    <green>67</green>
+                    <blue>127</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>128</red>
+                    <green>128</green>
+                    <blue>128</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>238</red>
+                    <green>238</green>
+                    <blue>230</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>74</red>
+                    <green>121</green>
+                    <blue>205</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>192</blue>
+                </color>
+                <color>
+                    <red>128</red>
+                    <green>0</green>
+                    <blue>128</blue>
+                </color>
+            </disabled>
+            <inactive>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>238</red>
+                    <green>238</green>
+                    <blue>230</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>119</red>
+                    <green>119</green>
+                    <blue>115</blue>
+                </color>
+                <color>
+                    <red>158</red>
+                    <green>158</green>
+                    <blue>152</blue>
+                </color>
+                <color>
+                    <red>37</red>
+                    <green>67</green>
+                    <blue>127</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>238</red>
+                    <green>238</green>
+                    <blue>230</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>74</red>
+                    <green>121</green>
+                    <blue>205</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>192</blue>
+                </color>
+                <color>
+                    <red>128</red>
+                    <green>0</green>
+                    <blue>128</blue>
+                </color>
+            </inactive>
+        </palette>
+    </property>
+    <property name="caption">
+        <string>frmAddAdditionalBlacklist</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <property name="whatsThis" stdset="0">
+        <string>Asianux TSN Updater</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="3" column="0">
+            <property name="name">
+                <cstring>layout16</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer12</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>171</width>
+                            <height>31</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>btnAdditionalOk</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Ok</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+O</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>btnAdditionalCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Cancel</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLineEdit" row="2" column="0">
+            <property name="name">
+                <cstring>edtBlacklist</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>textLabel1_2</cstring>
+            </property>
+            <property name="text">
+                <string>ex) kde* , *paint*,  *-devel</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>Enter the package names to be blacklisted.  Wildcards(*) are permitted.</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="922">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000036149444154789c5d934d4c9b7500c67fefff7d5b4adb1768cb475b3a181d94d14dd8f888900d3586257e7098d1eca09e36cde2c9e8c9a31f897a359e4c96c5032e59382c442f6e09738cccb94d6411a42083ad7cf7cbc24a3fdeb76fff1e1c179ff3eff91d9ee4512291080729587974e951aa2d5750959a5f54d43aa9548a96b012a628adef8a54410881a6d801c9e2e2221a80a22814ad3c47cceed6e3e6e0db87aa3a47bd6d9e4e5d77fb0cd330d26bbbcbe9cce6fd79f5b74bf3f65fef5a36b3ac4a0d00eda01cc9f7f7be54fdd6675dc3475f0f9ff52bfae12a84aa00d88b6933ba3dbd170d4cb40e79924d5fdf92e363d2563101b44c2e4d449e687bd97dee8bc1774fbfd67e4e4798361626b628640b80a0e34c80e8f900dee7bc11fbb7aecf4b8bf9eca4397e0d40382d5deb564ebf131dec7f2538504bee2fc9faf522d9788ac10f9a71fbcb3cbe9e2571cbc259a7d1f56a3474bceed4472d56e72100e1927a73bbabffacef9847ecafc2ce6d41614b43088dfab007bdd1492925c83c54494e2bb89b6db4848e9d0acaf03080a6a2866aeb7d6189c6daec36bb4b259c550d58f51200cbb478baa2925bdb41711539e46e446ff009a7cdd5035c11a661f88ca2e55999dd663b91a6f76223351d80690740950eb097e9b9e0a5fa88647e2a4e3693a352aeb40168c9bd84b19a5a32f6d7e276478bc185d141c22316f12937008d113fc1af248101070bcb8f98faf92ee1e06136728ff7008425cb3b0523b751e3ae21bf29b974f10e425389bce10420f8bc9dc08083dbdfc599fa3e86dfdf84ac9429940b31005194c58d9dc2df333e9b9f96fa4e966ea6f9e1c3198ca7ff6da0da15ee5cdee4c72fffc453e527a447c917133b2973f3f7678242f28ffce4d8567176bda921c4c9be13a4662b8c7f32472125b97765939bdfacd0d9de457b5b942249736e7f72ec497979164001b061f7f5560fbf7fa6e3fcc7bd832f36b83c556c3d4960ab9518b90ade1a2f0edd41ec41ac3cf5706ce246e6eaa77bf29f0529a5a53cfb9150501aba6d436f0e8546dfeb3bf942576b4fd0a10a1b4293ecaca6cbb19985cc74ecdad57bb91b97f7c8ce0165292507020015d06bf14686822323475bbbfb5caeda40c928e412c9cd855f167f9a8c5796ef0369a004f07f018000d4c68680d75d5da3174b798450a9b23bcc47f158124909b00e602925ff02899977713435ab660000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>btnAdditionalOk</sender>
+        <signal>clicked()</signal>
+        <receiver>frmAddAdditionalBlacklist</receiver>
+        <slot>slotAdditionalOk()</slot>
+    </connection>
+    <connection>
+        <sender>btnAdditionalCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>frmAddAdditionalBlacklist</receiver>
+        <slot>slotAdditionalCancel()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>slotAdditionalOk()</slot>
+    <slot>slotAdditionalCancel()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

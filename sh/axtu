@@ -1,0 +1,125 @@
+#!/bin/bash
+
+AXTUDIR=/usr/share/axtu
+PREEXE=/usr/bin/kdesu
+CMD=axtu
+ENV=gui
+
+USAGE () {
+	echo
+        echo USAGE : 
+        echo "        COMMAND -OPTION"
+        echo "        Ex) axtu -tu   (excute update wizard in TUI)"
+        echo ""
+        echo t : TUI mode regardless of user environment
+        echo u : Online Package Update Wizard
+        echo i : Online Package Install Wizard
+        echo s : Setup
+        echo n : Notifier \(tray icon\)
+        echo h : help
+        echo
+
+        echo "In addition, you can get more information on AXTU using man page"
+        echo "  Ex) man axtu"
+        echo ""
+}
+
+if [[ $1 = "--help" ]]; then
+        USAGE
+        exit 0
+elif [[ ! $1 = "" ]]; then
+	if [[ ! $1 = -[tuisnh]* ]]; then
+		USAGE
+		exit 0
+	fi
+fi
+
+
+while getopts "tuisn" opt
+do
+    case $opt in
+      t)
+	op_t="t"
+        ;;
+      u)
+        op_u="u"
+        ;;
+      i)
+        op_i="i"
+        ;;
+      s)
+        op_s="s"
+	;;
+      n)
+        op_n="n"
+	;;
+      *)
+	USAGE
+        exit 1
+        ;;
+    esac
+done
+
+
+if [[ $op_u$op_i$op_e$op_s$op_c$op_n  = [a-z][a-z]* ]]
+then
+	USAGE
+	exit 1
+fi
+
+if [ -z $DISPLAY ] || [ ! -z $op_t ] ; then
+        ENV="tui"
+        PREEXE=""
+else
+        ENV="gui"
+	if [ -e $AXTUDIR/$ENV/$CMD-$ENV ] ; then 
+        	PREEXE=/usr/bin/kdesu
+	else
+		ENV="tui"
+        	PREEXE=""
+	fi
+fi
+
+if [ "$op_n" == "n" -a "$ENV" == "tui" ]; then
+	echo "The notifier can NOT be executed in console environment!"
+	exit 1
+fi
+
+if [ "$#" == "0" -o "$1" == "-t" ]; then
+	CMD=$CMD-launcher-$ENV
+fi
+
+if [[ $op_s = s ]]; then
+ 	CMD=$CMD-setup-$ENV
+fi
+
+if [[ $op_n = n ]]; then
+	CMD=$CMD-notifier-$ENV
+fi
+
+for i in $op_u $op_i $op_e
+do
+	if [[  x$i != x ]]; then
+		if [[ $CMD = *$ENV ]]; then
+        		CMD="$CMD -$i"
+		else
+        		CMD="$CMD-$ENV -$i"
+		fi
+	fi
+done
+
+if [[ $op_n = n ]]; then
+    pidcmd=`/sbin/pidof $CMD`
+    if [ "$pidcmd" = "" ]; then
+            exec $AXTUDIR/$ENV/$CMD &
+    fi
+else
+        if [[ $PREEXE = "" ]]; then
+                exec $AXTUDIR/$ENV/$CMD
+        else
+        	exec $PREEXE "$AXTUDIR/$ENV/$CMD"
+        fi
+
+fi
+
+exit 0
