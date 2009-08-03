@@ -541,7 +541,15 @@ bool classGui::InitRpm()
 			QMessageBox::critical(this, staticTitle, tr("Failed to load the ReadHeaders() function."));			
 			m_nFinishErrNum =  FC_INIT_ERROR;
 			return false;
-		}		
+		}
+
+		if(ApplyObsoletes()==false)
+		{ //I acutally tested this block by return false in ApplyObsoletes(), and it worked well
+			m_Logger->WriteLog_char(ERROR_LOG, MYSELF_NAME_AXTU, "Failed to load the ApplyObsoletes() function.", NULL);
+			QMessageBox::critical(this, staticTitle, tr("Failed to load the ApplyObsoletes() function."));
+			m_nFinishErrNum =  FC_INIT_ERROR;
+			return false;
+		}	
 	}	
 	return true;
 }
@@ -773,6 +781,16 @@ void classGui::GetPackagesCallBack(int p1, int p2, const char * msg1, const char
 	g_labelTotalStatus->setText(tr(msg1));
 	g_labelCurrentStatus->setText(tr(msg2));
 	qApp->processEvents();	
+}
+
+/*!
+@brief ob handling.
+Only to make changes to update and install lists
+Nothing about dep check or any other important stuff
+*/
+bool classGui::ApplyObsoletes()
+{
+	return true;
 }
 
 /*!

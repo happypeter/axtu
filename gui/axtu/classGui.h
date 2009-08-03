@@ -166,7 +166,7 @@ public:
 	static void CheckCallBack(int p1, int p2, const char * msg1, const char * msg2 );
 
 	
-	
+	bool ApplyObsoletes();	
 	bool ReadHeaders();
 	int ProceedUpdate();	
 	
