@@ -1085,6 +1085,33 @@ bool classRpmEngine::CheckArch(string strArch1, string strArch2)
 }
 
 /*!
+@brief Remove package from Install List.
+Remove Item from Install List.
+@param strName : package name.
+*/
+void classRpmEngine::RemoveInstallList(string strName)
+{
+	vector <structFileInfo>::iterator it;
+	for (it=m_vectorInstallList.begin(); it!=m_vectorInstallList.end(); it++) 
+	{
+		if (strName == it->strName) 
+		{
+			m_vectorInstallList.erase(it--);
+		}
+	}
+}
+ 
+/*!
+@brief used by classGui::ApplyObsoletes().
+only modify update install lists, nothing else
+*/
+int classRpmEngine::ApplyObsoletes()
+{
+	RemoveInstallList("pump-devel");
+	return 0;
+}
+
+/*!
 @brief Read headers.
 
 Read header infos from all header files(*.hdr). 

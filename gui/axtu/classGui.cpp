@@ -790,6 +790,17 @@ Nothing about dep check or any other important stuff
 */
 bool classGui::ApplyObsoletes()
 {
+/*
+	this part may be useful, if ApplyObsoletes() takes more than 1 second
+	labelTotalStatus->setText(tr("Reading header files"));
+	labelCurrentStatus->setText("");
+	m_rpmEngine->SetReadHeadersCallBack(ReadHeadersCallBack);
+	if(m_rpmEngine->ReadHeaders() != 0)
+*/
+	if(m_rpmEngine->ApplyObsoletes() != 0)
+	{
+		return false;
+	}
 	return true;
 }
 
