@@ -1658,6 +1658,10 @@ void classGui::SetPackageSummary(const char * strNVRA)
 			edtPackageSummary->append(result->summary);
 			edtPackageSummary->append(" \n");
 			edtPackageSummary->append(result->shortDesp);
+			edtPackageSummary->append("obsoleteName:\t");//the obsolete info added here is now for debug
+			edtPackageSummary->append(*(result->obsoleteName));//but maybe it is a nice feather to keep
+			edtPackageSummary->append("obsoleteVersion:\t");
+			edtPackageSummary->append(*(result->obsoleteVersion));
 			edtPackageSummary->moveCursor(QTextEdit::MoveHome, false);
 		}
 	}

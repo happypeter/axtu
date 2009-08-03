@@ -85,25 +85,27 @@ struct structFileList {
 
 struct structRPMInfo
 {
-    char *name;
-    char *version;
-    char *release;
-    char *arch;
-    char *group;
-    int size;
-    int matchNumber;
-    int upgradeFlag;
-    int disknum;
-    char * summary;
-    char * shortDesp;
-    char ** fileList;
-    char ** requireName;
-    char ** requireVersion;
-    char ** provideName;
-    char ** provideVersion;
-    int requireFileNumber;
-    struct structFileList *containFiles;
-    Header h;
+	char *name;
+	char *version;
+	char *release;
+	char *arch;
+	char *group;
+	int size;
+	int matchNumber;
+	int upgradeFlag;
+	int disknum;
+	char * summary;
+	char * shortDesp;
+	char ** fileList;
+	char ** requireName;
+	char ** requireVersion;
+	char ** provideName;
+	char ** provideVersion;
+	char ** obsoleteName;
+	char ** obsoleteVersion;
+	int requireFileNumber;
+	struct structFileList *containFiles;
+	Header h;
 };
 
 

@@ -1241,8 +1241,9 @@ struct structRPMInfo *classRpmEngine::GetHeaderInfo(Header h, int k, int index /
 	int tag1[9] = { RPMTAG_NAME, RPMTAG_VERSION, RPMTAG_RELEASE,
 			RPMTAG_SIZE, RPMTAG_GROUP, RPMTAG_SUMMARY,
 			RPMTAG_DESCRIPTION, RPMTAG_ARCH, 1000004 };
-	int tag2[4] = { RPMTAG_REQUIRENAME, RPMTAG_REQUIREVERSION,
-			RPMTAG_PROVIDENAME, RPMTAG_PROVIDEVERSION };
+	int tag2[6] = { RPMTAG_REQUIRENAME, RPMTAG_REQUIREVERSION,
+			RPMTAG_PROVIDENAME, RPMTAG_PROVIDEVERSION,
+			RPMTAG_OBSOLETENAME, RPMTAG_OBSOLETEVERSION };
 
 	rpmInfo = (struct structRPMInfo *)malloc(sizeof(struct structRPMInfo));
 	if(rpmInfo == NULL)
@@ -1357,7 +1358,7 @@ struct structRPMInfo *classRpmEngine::GetHeaderInfo(Header h, int k, int index /
 		m_Logger->WriteLog_char(ERROR_LOG, MYSELF_NAME, "malloc error in GetHeaderInfo() function",NULL);
 		return NULL;
 	}
-	for (j = 0; j < 4; j++)
+	for (j = 0; j < 6; j++)
 	{
 		*c = 0;
 		int_32 pt;
@@ -1407,7 +1408,8 @@ struct structRPMInfo *classRpmEngine::GetHeaderInfo(Header h, int k, int index /
 	rpmInfo->requireVersion = tmp2[1];
 	rpmInfo->provideName = tmp2[2];
 	rpmInfo->provideVersion = tmp2[3];
-
+	rpmInfo->obsoleteName = tmp2[4];
+	rpmInfo->obsoleteVersion = tmp2[5];
 	rpmInfo->h = headerCopy(h);
 	//rpmInfo->upgradeFlag = 0; //default set to install
 	rpmInfo->disknum = index;  //default set to disk(updater use server num)
