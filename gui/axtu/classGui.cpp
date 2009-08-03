@@ -350,7 +350,8 @@ classGui::~classGui()
 @brief Init classRpmEngine object.
 
 Init classRpmEngine object.
- 
+
+Main flows go here. 
 */
 bool classGui::InitRpm()
 {		 
