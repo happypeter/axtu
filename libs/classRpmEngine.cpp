@@ -176,11 +176,17 @@ int classRpmEngine::UnInitTs()
 			free((*it)->provideName[i]);
 		for(int i=0;(*it)->provideVersion[i] !=NULL;i++)
 			free((*it)->provideVersion[i]);
+		for(int i=0;(*it)->obsoleteName[i] !=NULL;i++)
+			free((*it)->obsoleteName[i]);
+		for(int i=0;(*it)->obsoleteVersion[i] !=NULL;i++)
+			free((*it)->obsoleteVersion[i]);
 
 		free((*it)->requireName);
 		free((*it)->requireVersion);
 		free((*it)->provideName);
 		free((*it)->provideVersion);
+		free((*it)->obsoleteName);
+		free((*it)->obsoleteVersion);
 
 		headerFree((*it)->h);
 		free((*it)->containFiles);
@@ -1107,6 +1113,27 @@ void classRpmEngine::RemoveUpdateInstallList(string strName)
 			m_nUpdateAvailableCount--; //many other places need to concern about this
 		}
 	}
+}
+
+/*!
+@brief Is Package Installed?
+Is Package Installed on local system?.
+@param strName : package name.
+@return true is "installed".
+*/
+bool classRpmEngine::IsPackageInstalled(string strName)
+{
+	set <structHeaderInfo, DereferenceLess>::iterator it;
+	string strNameL, strVerL, strRelL, strArchL;
+	for (it=m_setLocalHeaderInfo.begin(); it!=m_setLocalHeaderInfo.end();it++) 
+	{
+		stripNVRA(it->strNVRA, &strNameL, &strVerL, &strRelL, &strArchL);
+		if (strNameL == strName) 
+		{
+			return true;
+		}
+	}
+	return false;
 }
  
 /*!
