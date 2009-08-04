@@ -245,7 +245,7 @@ public:
 	bool ReadCacheDirInfo(string strConfigFilePath=CONFIG_FILE);
 	int ReadRemoteHeaderInfo();
 	int ReadLocalHeaderInfo();
-	void RemoveInstallList(string );
+	void RemoveUpdateInstallList(string );
 	int ApplyObsoletes();
 	int ReadHeaders();    // -------------------------------------------------- Callback
 	int OpenHeader(string strFilePath, int nIndex, bool bUpgrade);

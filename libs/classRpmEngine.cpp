@@ -1089,7 +1089,7 @@ bool classRpmEngine::CheckArch(string strArch1, string strArch2)
 Remove Item from Install List.
 @param strName : package name.
 */
-void classRpmEngine::RemoveInstallList(string strName)
+void classRpmEngine::RemoveUpdateInstallList(string strName)
 {
 	vector <structFileInfo>::iterator it;
 	for (it=m_vectorInstallList.begin(); it!=m_vectorInstallList.end(); it++) 
@@ -1097,6 +1097,14 @@ void classRpmEngine::RemoveInstallList(string strName)
 		if (strName == it->strName) 
 		{
 			m_vectorInstallList.erase(it--);
+		}
+	}
+	for (it=m_vectorUpdateList.begin(); it!=m_vectorUpdateList.end(); it++) 
+	{//not tested
+		if (strName == it->strName) 
+		{
+			m_vectorUpdateList.erase(it--);
+			m_nUpdateAvailableCount--; //many other places need to concern about this
 		}
 	}
 }
@@ -1113,7 +1121,7 @@ int classRpmEngine::ApplyObsoletes()
 	{
 		for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
 		{
-			RemoveInstallList((*it)->obsoleteName[i]);
+			RemoveUpdateInstallList((*it)->obsoleteName[i]);
 		}
 	}
 	return 0;
