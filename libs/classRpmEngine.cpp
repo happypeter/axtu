@@ -1106,8 +1106,16 @@ void classRpmEngine::RemoveInstallList(string strName)
 only modify update install lists, nothing else
 */
 int classRpmEngine::ApplyObsoletes()
-{
-	RemoveInstallList("pump-devel");
+{	
+	int i;
+	vector<structRPMInfo*>::iterator it;
+	for(it=m_vectorRPMInfo.begin();it!=m_vectorRPMInfo.end();it++)
+	{
+		for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
+		{
+			RemoveInstallList((*it)->obsoleteName[0]);
+		}
+	}
 	return 0;
 }
 
