@@ -1113,7 +1113,7 @@ int classRpmEngine::ApplyObsoletes()
 	{
 		for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
 		{
-			RemoveInstallList((*it)->obsoleteName[0]);
+			RemoveInstallList((*it)->obsoleteName[i]);
 		}
 	}
 	return 0;
