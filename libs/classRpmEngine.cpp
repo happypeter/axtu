@@ -1121,6 +1121,19 @@ void classRpmEngine::RemoveUpdateInstallList(string strName)
 */
 bool classRpmEngine::CopyObsoleterFromInstallToUpdate()
 {
+        int i;
+        vector<structRPMInfo*>::iterator it;
+        for(it=m_vectorRPMInfo.begin();it!=m_vectorRPMInfo.end();it++)
+        {
+                for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
+                {
+			if(IsPackageInstalled((*it)->obsoleteName[i])==true)
+			{
+		//		ADD((*it)->name) //peter: I can use JeongHun's code as ADD()
+			}			 
+
+                }
+        }
 return true;
 }
 
