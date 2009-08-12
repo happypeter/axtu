@@ -1093,7 +1093,7 @@ bool classRpmEngine::CheckArch(string strArch1, string strArch2)
 /*!
 @brief Remove package from Install List.
 Remove Item from Install List.
-@param strName : package name.
+@param strName : obsoleted package name.
 */
 bool classRpmEngine::RemoveUpdateInstallList(string strName)
 {
@@ -1121,8 +1121,32 @@ bool classRpmEngine::RemoveUpdateInstallList(string strName)
 */
 bool classRpmEngine::CopyObsoleterFromInstallToUpdate(string strName)
 {
-
-return true;
+//refer to JeongHong's FindInsertPosFromUpdateList() 
+//and the last part of CopyObsoletePackagesFromInstallToUpdate()
+	string strResult;
+        int nCount=0;
+        vector <structFileInfo>::iterator itUpdate;
+        for(itUpdate = m_vectorUpdateList.begin();itUpdate!=m_vectorUpdateList.end();itUpdate++)
+        {
+		if(itUpdate->strName > strName)
+		{
+			break;
+		}
+		nCount++;
+        }
+	vector <structFileInfo>::iterator itInstall;
+        for (itInstall=m_vectorInstallList.begin(); itInstall!=m_vectorInstallList.end(); itInstall++)
+        {
+                if (strName == itInstall->strName)
+                {
+                        break;
+                }
+        }
+	m_vectorUpdateList.insert(m_vectorUpdateList.begin()+nCount, *(itInstall--));
+	m_nUpdateAvailableCount++;
+	//maybe I also need sth like  m_vectorObsoleteToUpdate.push_back(*itInstall);
+	//to remember which package should be updated even it is on install list.
+	return true;
 }
 
 /*!
@@ -1171,6 +1195,7 @@ int classRpmEngine::ApplyObsoletes()
                         if(IsPackageInstalled((*it)->obsoleteName[i])==true)
                         {
 				CopyObsoleterFromInstallToUpdate((*it)->name);
+				//it A obsoletes B C, then A will be added twice, note|
                         }
 
                 }
