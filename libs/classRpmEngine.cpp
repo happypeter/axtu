@@ -1095,7 +1095,7 @@ bool classRpmEngine::CheckArch(string strArch1, string strArch2)
 Remove Item from Install List.
 @param strName : package name.
 */
-void classRpmEngine::RemoveUpdateInstallList(string strName)
+bool classRpmEngine::RemoveUpdateInstallList(string strName)
 {
 	vector <structFileInfo>::iterator it;
 	for (it=m_vectorInstallList.begin(); it!=m_vectorInstallList.end(); it++) 
@@ -1119,21 +1119,9 @@ void classRpmEngine::RemoveUpdateInstallList(string strName)
 @brief copy obsoleter from installlist to update list
 @return true is "done".
 */
-bool classRpmEngine::CopyObsoleterFromInstallToUpdate()
+bool classRpmEngine::CopyObsoleterFromInstallToUpdate(string strName)
 {
-        int i;
-        vector<structRPMInfo*>::iterator it;
-        for(it=m_vectorRPMInfo.begin();it!=m_vectorRPMInfo.end();it++)
-        {
-                for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
-                {
-			if(IsPackageInstalled((*it)->obsoleteName[i])==true)
-			{
-		//		ADD((*it)->name) //peter: I can use JeongHun's code as ADD()
-			}			 
 
-                }
-        }
 return true;
 }
 
@@ -1164,6 +1152,7 @@ only modify update install lists, nothing else
 */
 int classRpmEngine::ApplyObsoletes()
 {	
+	//first we remove the obsoleted from both lists
 	int i;
 	vector<structRPMInfo*>::iterator it;
 	for(it=m_vectorRPMInfo.begin();it!=m_vectorRPMInfo.end();it++)
@@ -1173,10 +1162,19 @@ int classRpmEngine::ApplyObsoletes()
 			RemoveUpdateInstallList((*it)->obsoleteName[i]);
 		}
 	}
-	if(CopyObsoleterFromInstallToUpdate()==false)
-	{
-		return -1;
-	}
+
+	//below we add obsoleter to update list
+        for(it=m_vectorRPMInfo.begin();it!=m_vectorRPMInfo.end();it++)
+        {
+                for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
+                {
+                        if(IsPackageInstalled((*it)->obsoleteName[i])==true)
+                        {
+				CopyObsoleterFromInstallToUpdate((*it)->name);
+                        }
+
+                }
+        }
 	return 0;
 }
 
