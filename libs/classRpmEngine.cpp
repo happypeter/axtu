@@ -1116,6 +1116,15 @@ void classRpmEngine::RemoveUpdateInstallList(string strName)
 }
 
 /*!
+@brief copy obsoleter from installlist to update list
+@return true is "done".
+*/
+bool classRpmEngine::CopyObsoleterFromInstallToUpdate()
+{
+return true;
+}
+
+/*!
 @brief Is Package Installed?
 Is Package Installed on local system?.
 @param strName : package name.
@@ -1150,6 +1159,10 @@ int classRpmEngine::ApplyObsoletes()
 		{
 			RemoveUpdateInstallList((*it)->obsoleteName[i]);
 		}
+	}
+	if(CopyObsoleterFromInstallToUpdate()==false)
+	{
+		return -1;
 	}
 	return 0;
 }
