@@ -1144,8 +1144,7 @@ bool classRpmEngine::CopyObsoleterFromInstallToUpdate(string strName)
         }
 	m_vectorUpdateList.insert(m_vectorUpdateList.begin()+nCount, *(itInstall--));
 	m_nUpdateAvailableCount++;
-	//maybe I also need sth like  m_vectorObsoleteToUpdate.push_back(*itInstall);
-	//to remember which package should be updated even it is on install list.
+	m_vectorObsoleteToUpdate.push_back(*itInstall);
 	return true;
 }
 
@@ -1178,6 +1177,7 @@ int classRpmEngine::ApplyObsoletes()
 {	
 	//first we remove the obsoleted from both lists
 	int i;
+	m_vectorObsoleteToUpdate.clear();
 	vector<structRPMInfo*>::iterator it;
 	for(it=m_vectorRPMInfo.begin();it!=m_vectorRPMInfo.end();it++)
 	{

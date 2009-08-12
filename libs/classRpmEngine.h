@@ -207,7 +207,7 @@ private:
 	
 	vector <structAddedFile> m_vectorAddedFile;
 	vector <string> m_vectorAddedKmodRedcastleFile;
-	
+	vector <structFileInfo> m_vectorObsoleteToUpdate;//to mark obsoleter shall be updated	
 	vector <structFileInfo> m_vectorUpdateList;
 	vector <structFileInfo> m_vectorInstallList;
 	
