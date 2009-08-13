@@ -207,7 +207,8 @@ private:
 	
 	vector <structAddedFile> m_vectorAddedFile;
 	vector <string> m_vectorAddedKmodRedcastleFile;
-	vector <structFileInfo> m_vectorObsoleteToUpdate;//to mark obsoleter shall be updated	
+	vector <structFileInfo> m_vectorObsoleteToUpdate;//to mark obsoleter shall be updated
+	//adding this line leads to a mem leak on my xen machine, but it is OK on my host machine.	
 	vector <structFileInfo> m_vectorUpdateList;
 	vector <structFileInfo> m_vectorInstallList;
 	
@@ -265,6 +266,7 @@ public:
 	set <structHeaderInfo, DereferenceLess> GetInstalledList();
 	int Check(bool bForceBlackist=false);         
 	bool CheckKmodRedcastle();
+	bool CheckObsoleteToUpdate(string strName, string strVersion, string strRelease, string strArch);
 	vector <string> GetAddedKmodRedcastleFile();
 	bool RemoveKernelAndKmodRedcastle(int nType);
 	int Run(bool bForce=false);					 // -------------------------------------------------- Callback

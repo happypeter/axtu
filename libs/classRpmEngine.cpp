@@ -2614,8 +2614,27 @@ int classRpmEngine::CheckKernel(string strName)
 		return 1;
 	}
 }
-
-
+/*!
+@brief Check if file is a obsoleter
+inorder to decide whether to update it or not
+@return          true : given file is a oblsoleter;  false: not one
+*/
+bool classRpmEngine::CheckObsoleteToUpdate(string strName, string strVersion, string strRelease, string strArch)
+{
+//I think this funtion won't work well, since it does not do obsoleteversion check here, am I right?
+//and also I think only check name is sufficient, maybe arch is necessay in some cases.
+        vector <structFileInfo>::iterator it;
+        bool bRet = false;
+        for(it=m_vectorObsoleteToUpdate.begin();it!=m_vectorObsoleteToUpdate.end();it++)
+        {
+                if(strName == it->strName && strVersion == it->strVersion && strRelease == it->strRelease && strArch == it->strArch)
+                {
+                        bRet = true;
+                        break;
+                }
+        }
+        return bRet;
+}
 /*!
 @brief Add Header to ts.
 
@@ -2636,16 +2655,29 @@ int classRpmEngine::AddInstallElement(rpmts ts, Header h, const fnpyKey key, rpm
 	{
 		return -1;
 	}
-	string s_1;
-	s_1=(string)((const char *)key);
-	if(s_1.find("kernel")!= string::npos)//if the package is a kernel install it
-	{
-        	nUpgrade=0;
-		if(s_1.find("kernel-doc")!= string::npos||s_1.find("kernel-header")!= string::npos)
-		{
-			nUpgrade=1;
-		}
-	}
+	int nRet;
+	const char * strName;
+        const char * strVersion;
+        const char * strRelease;
+        const char * strArch;
+        headerGetEntry(h, RPMTAG_NAME, NULL, (void **)&strName, NULL);
+        headerGetEntry(h, RPMTAG_VERSION, NULL, (void **)&strVersion, NULL);
+        headerGetEntry(h, RPMTAG_RELEASE, NULL, (void **)&strRelease, NULL);
+        headerGetEntry(h, RPMTAG_ARCH, NULL, (void **)&strArch, NULL);
+	//do I need to free the pointers here?
+	nRet = CheckKernel(strName);
+        if ((nRet == 0)||(nRet == 2))
+        {
+                nUpgrade = 0;
+        }
+        else
+        {
+                if(CheckObsoleteToUpdate(strName, strVersion, strRelease, strArch) == true)
+                {
+                        nUpgrade = 1;
+                }
+        }
+
 	if (nUpgrade)
 	{
 		if (CheckBlacklist((const char *)key) == true)
