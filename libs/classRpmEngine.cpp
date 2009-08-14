@@ -1133,6 +1133,7 @@ bool classRpmEngine::CopyObsoleterFromInstallToUpdate(string strName)
 			break;
 		}
 		nCount++;
+	//not very confident with the nCount here, need to test when I have time
         }
 	vector <structFileInfo>::iterator itInstall;
         for (itInstall=m_vectorInstallList.begin(); itInstall!=m_vectorInstallList.end(); itInstall++)
@@ -1142,7 +1143,9 @@ bool classRpmEngine::CopyObsoleterFromInstallToUpdate(string strName)
                         break;
                 }
         }
-	m_vectorUpdateList.insert(m_vectorUpdateList.begin()+nCount, *(itInstall--));
+	m_vectorUpdateList.insert(m_vectorUpdateList.begin()+nCount, *(itInstall));
+	//it is the fomer itInstall-- here that break my m_vectorObsoleteToUpdate, 
+	//thus sos can not be updated, now it is OK
 	m_nUpdateAvailableCount++;
 	m_vectorObsoleteToUpdate.push_back(*itInstall);
 	return true;
@@ -1193,9 +1196,11 @@ int classRpmEngine::ApplyObsoletes()
                 for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
                 {
                         if(IsPackageInstalled((*it)->obsoleteName[i])==true)
-                        {
+                        {	//here I've tested if A obsoletes more than 1 tags, axtu can handle it properly
 				CopyObsoleterFromInstallToUpdate((*it)->name);
-				//it A obsoletes B C, then A will be added twice, note|
+				//if A obsoletes B C, and B,C are both installed already
+				// then A will be added twice, note|
+				
                         }
 
                 }
@@ -2668,13 +2673,13 @@ int classRpmEngine::AddInstallElement(rpmts ts, Header h, const fnpyKey key, rpm
 	nRet = CheckKernel(strName);
         if ((nRet == 0)||(nRet == 2))
         {
-                nUpgrade = 0;
+		nUpgrade = 0;
         }
         else
         {
                 if(CheckObsoleteToUpdate(strName, strVersion, strRelease, strArch) == true)
-                {
-                        nUpgrade = 1;
+                {	
+			nUpgrade = 1;
                 }
         }
 
