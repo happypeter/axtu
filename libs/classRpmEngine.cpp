@@ -1119,7 +1119,7 @@ bool classRpmEngine::RemoveUpdateInstallList(string strName)
 @brief copy obsoleter from installlist to update list
 @return true is "done".
 */
-bool classRpmEngine::CopyObsoleterFromInstallToUpdate(string strName)
+bool classRpmEngine::CopyObsoleterFromInstallToUpdate(string strName, string strArch)
 {
 //refer to JeongHong's FindInsertPosFromUpdateList() 
 //and the last part of CopyObsoletePackagesFromInstallToUpdate()
@@ -1138,7 +1138,7 @@ bool classRpmEngine::CopyObsoleterFromInstallToUpdate(string strName)
 	vector <structFileInfo>::iterator itInstall;
         for (itInstall=m_vectorInstallList.begin(); itInstall!=m_vectorInstallList.end(); itInstall++)
         {
-                if (strName == itInstall->strName)
+                if ((strName == itInstall->strName)&&(strArch==itInstall->strArch))
                 {
                         break;
                 }
@@ -1146,7 +1146,7 @@ bool classRpmEngine::CopyObsoleterFromInstallToUpdate(string strName)
 	m_vectorUpdateList.insert(m_vectorUpdateList.begin()+nCount, *(itInstall));
 	//it is the fomer itInstall-- here that break my m_vectorObsoleteToUpdate, 
 	//thus sos can not be updated, now it is OK
-	m_nUpdateAvailableCount++;
+	m_nUpdateAvailableCount++; //for notifier
 	m_vectorObsoleteToUpdate.push_back(*itInstall);
 	return true;
 }
@@ -1197,7 +1197,7 @@ int classRpmEngine::ApplyObsoletes()
                 {
                         if(IsPackageInstalled((*it)->obsoleteName[i])==true)
                         {	//here I've tested if A obsoletes more than 1 tags, axtu can handle it properly
-				CopyObsoleterFromInstallToUpdate((*it)->name);
+				CopyObsoleterFromInstallToUpdate((*it)->name, (*it)->arch);
 				//if A obsoletes B C, and B,C are both installed already
 				// then A will be added twice, note|
 				

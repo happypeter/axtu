@@ -246,7 +246,7 @@ public:
 	bool ReadCacheDirInfo(string strConfigFilePath=CONFIG_FILE);
 	int ReadRemoteHeaderInfo();
 	int ReadLocalHeaderInfo();
-	bool CopyObsoleterFromInstallToUpdate(string strName);
+	bool CopyObsoleterFromInstallToUpdate(string strName,string strArch);
 	bool IsPackageInstalled(string strName);
 	bool RemoveUpdateInstallList(string strName);
 	int ApplyObsoletes();
