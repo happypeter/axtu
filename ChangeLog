@@ -1,5 +1,5 @@
 2007-12-03 Yusop Kim <yusop@haansoft.com>
-	* Makefile.am,Makefile.in: add a script to remove the *.qm files
+	* Makefile.am,Makefile.in: add a script to remove *.qm files
 	* gui/axtu/classGui.cpp,tui/axtu/main.cpp,libs/classAuthen.cpp,libs/classAuthen.h,libs/classNetwork.h: add a function for termination according to return value of axtu-authen-client
 	* tui/axtu/classTui.cpp: modify some log routine from "DEBUG_LOG" to "ERROR_LOG"
 	
