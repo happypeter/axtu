@@ -40,7 +40,8 @@ using namespace std;
 enum {
         SUCCESS_LOG=1,
         ERROR_LOG,
-        DEBUG_LOG
+        DEBUG_LOG,
+	OB_LOG
 };
 
 /*!
@@ -78,6 +79,7 @@ public:
 //	void DebugLog_char(const char *szMsg,const char *szSubMsg, ...);
 //	void DebugLog_int(const char *szMsg,int nArg, ...);
 	string GetErrorFilePath(void);
+	string GetObFilePath(void);
 	string GetDebugFilePath(void);
 	string GetSuccessFilePath(void);
 	string GetLogPath(void);
@@ -96,6 +98,7 @@ private:
 	string m_strLogDir;
 	string m_strSuccessLogFilePath;
 	string m_strErrorLogFilePath;
+	string m_strObLogFilePath;
 	string m_strDebugFilePath;
 	ofstream m_fout;
 

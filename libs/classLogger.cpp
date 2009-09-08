@@ -36,6 +36,7 @@ void classLogger::SetFullPath(void)
 	m_strSuccessLogFilePath.assign(m_strLogDir + "/" + SUCCESS_LOG_FILE);
 	m_strErrorLogFilePath.assign(m_strLogDir + "/" + ERROR_LOG_FILE);
 	m_strDebugFilePath.assign(m_strLogDir + "/" + DEBUG_LOG_FILE);
+	m_strObLogFilePath.assign(m_strLogDir + "/" + OB_LOG_FILE);
 }
 /*
 void classLogger::Log(const char* msg,bool bShowConsol)
@@ -67,6 +68,11 @@ bool classLogger::Open(int nFlag)
 			m_ConfigParser->_mkdir(m_strLogDir.c_str());
 			m_fout.open(m_strDebugFilePath.c_str(),ios::app);
 			break;
+		case OB_LOG:
+                        m_ConfigParser->_mkdir(m_strLogDir.c_str());
+                        m_fout.open(m_strObLogFilePath.c_str(),ios::app);
+                        break;
+
 		default:
 			return false;
 	}	
@@ -293,6 +299,17 @@ string classLogger::GetErrorFilePath(void)
 {
 	return m_strErrorLogFilePath;
 }
+
+/*!
+@brief get file(the file is recorded obsolete info)'s path
+
+@return string - ObLog file's path
+*/
+string classLogger::GetObFilePath(void)
+{
+        return m_strObLogFilePath;
+}
+
 
 /*! 
 @brief get file(the file is recorded Debug message)'s path

@@ -27,6 +27,7 @@ using namespace std;
 #define ERROR_LOG_FILE "error.log"
 #define DEBUG_LOG_FILE "debug.log"
 #define LAST_ERROR_LOG_FILE "lasterror.log"
+#define OB_LOG_FILE "ob.log"
 
 
 #define SETUP_PATH "/usr/share/axtu/gui/axtu-setup-gui"
