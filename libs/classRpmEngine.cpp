@@ -4582,8 +4582,18 @@ void 	classRpmEngine::SetNetwork(classNetwork *network)
 
 bool classRpmEngine::SaveObInfo()
 {
+	int i;
+        vector<structRPMInfo*>::iterator it;
+        for(it=m_vectorRPMInfo.begin();it!=m_vectorRPMInfo.end();it++)
+        {	m_Logger->WriteLog_char(ERROR_LOG, "obsoleter+++",((*it)->name),NULL);
+                for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
+                {
+                        RemoveUpdateInstallList((*it)->obsoleteName[i]);
+                        m_Logger->WriteLog_char(ERROR_LOG, "obsoleted---",((*it)->obsoleteName[i]),NULL);
+                }
+        }
 
-return false;
+return true;
 
 }
 
