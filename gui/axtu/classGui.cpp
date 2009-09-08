@@ -553,7 +553,15 @@ bool classGui::InitRpm()
 	}	
 	return true;
 }
+void classGui::test_slot()
+{
 
+                QMessageBox::critical(this, staticTitle, tr("test_slot"));
+                m_Logger->WriteLog_char(ERROR_LOG, MYSELF_NAME_AXTU,  "ttttttttt", NULL);
+
+
+
+}
 /*!
 @brief Error handler for getting packages
 

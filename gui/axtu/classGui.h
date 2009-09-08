@@ -180,6 +180,7 @@ public:
 	virtual void slotSelectAll(int nSelect);
 	virtual void slotChangeListPackage(QListViewItem * item);
 	virtual void slotSetupBlacklist();
+	virtual void test_slot();
 	virtual void slotClickPackage(QListViewItem * item);
 	void Exit(int nRet);	
 	
@@ -218,7 +219,6 @@ public:
 	
 public slots:
 	void slotSetupBlackExit();
-  
 private:	
 	// Need new operation
 	QProcess * m_processSetupBlack;
