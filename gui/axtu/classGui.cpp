@@ -561,10 +561,14 @@ for apply obsolete to gui/setup -b
 
 void classGui::slotSaveOb()
 {
-
-                QMessageBox::critical(this, staticTitle, tr("slotSaveOb"));
-                m_Logger->WriteLog_char(ERROR_LOG, MYSELF_NAME_AXTU,  "slotSaveOb", NULL);
-
+//	if(m_rpmEngine->SaveObInfo()==false)
+/* strange thing is that if I call SaveObInfo here, axtu-gui will be killed, maybe its simply not save
+   to call another object's member in a slot.
+ */
+	{
+                QMessageBox::critical(this, staticTitle, tr("if(SaveObInfo()==false)"));
+                m_Logger->WriteLog_char(ERROR_LOG, MYSELF_NAME_AXTU,  "if(SaveObInfo()==false)", NULL);
+	}
 
 
 }

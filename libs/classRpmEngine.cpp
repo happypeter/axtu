@@ -4580,6 +4580,13 @@ void 	classRpmEngine::SetNetwork(classNetwork *network)
 	m_Network = network;
 }
 
+bool classRpmEngine::SaveObInfo()
+{
+
+return false;
+
+}
+
 //! Apply blacklist to update
 int classRpmEngine::ApplyBlacklistToUpdate()
 {

@@ -250,7 +250,8 @@ public:
 	bool IsPackageInstalled(string strName);
 	bool RemoveUpdateInstallList(string strName);
 	int ApplyObsoletes();
-	int ReadHeaders();    // -------------------------------------------------- Callback
+	bool SaveObInfo();	//----especially for gui-setup blacklist
+	int ReadHeaders();	// -------------------------------------------------- Callback
 	int OpenHeader(string strFilePath, int nIndex, bool bUpgrade);
 	int CompareHeaderInfo(vector <structHeaderInfo> vectorHeaderInfo, structHeaderInfo headerInfo);	
 	bool CreateUpdateInstallList();
@@ -269,7 +270,7 @@ public:
 	bool CheckObsoleteToUpdate(string strName, string strVersion, string strRelease, string strArch);
 	vector <string> GetAddedKmodRedcastleFile();
 	bool RemoveKernelAndKmodRedcastle(int nType);
-	int Run(bool bForce=false);					 // -------------------------------------------------- Callback
+	int Run(bool bForce=false);	// -------------------------------------------------- Callback
 	int Test();
 	void SetNetwork(classNetwork * network);
 	
