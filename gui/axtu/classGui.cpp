@@ -563,7 +563,9 @@ void classGui::slotSaveOb()
 {
 //	if(m_rpmEngine->SaveObInfo()==false)
 /* strange thing is that if I call SaveObInfo here, axtu-gui will be killed, maybe its simply not save
-   to call another object's member in a slot.
+   to call another object's member in a slot. 
+   A: No, it is not true, see slotSetupBlackExit(), there is a engine fun inside
+      and I put SaveObInfo() else where, still axtu-gui is killed
  */
 	{
                 QMessageBox::critical(this, staticTitle, tr("if(SaveObInfo()==false)"));
@@ -1616,6 +1618,7 @@ int classGui::MoveNextPage(int nStep)
 			return ShowFinishPage();			  	
 		}
 		ShowList();
+
 		
 		// Found newer updater element.
 		if( m_nSelfUpdateMode == true)
