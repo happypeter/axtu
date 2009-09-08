@@ -4585,10 +4585,13 @@ bool classRpmEngine::SaveObInfo()
 	int i;
         vector<structRPMInfo*>::iterator it;
         for(it=m_vectorRPMInfo.begin();it!=m_vectorRPMInfo.end();it++)
-        {	m_Logger->WriteLog_char(OB_LOG, "obsoleter+++",((*it)->name),NULL);
+        {	
+		if((*it)->obsoleteName[0]) //if here is for the sake of getting rid of names with no obsoletee
+		{
+			m_Logger->WriteLog_char(OB_LOG, "obsoleter+++",((*it)->name),NULL);
+		}
                 for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
                 {
-                        RemoveUpdateInstallList((*it)->obsoleteName[i]);
                         m_Logger->WriteLog_char(OB_LOG, "obsoleted---",((*it)->obsoleteName[i]),NULL);
                 }
         }
