@@ -180,7 +180,7 @@ public:
 	virtual void slotSelectAll(int nSelect);
 	virtual void slotChangeListPackage(QListViewItem * item);
 	virtual void slotSetupBlacklist();
-	virtual void test_slot();
+	virtual void slotSaveOb(); 
 	virtual void slotClickPackage(QListViewItem * item);
 	void Exit(int nRet);	
 	

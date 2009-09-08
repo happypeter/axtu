@@ -553,11 +553,17 @@ bool classGui::InitRpm()
 	}	
 	return true;
 }
-void classGui::test_slot()
+/*!
+@brief save obsolete info into a file
+
+for apply obsolete to gui/setup -b
+*/
+
+void classGui::slotSaveOb()
 {
 
-                QMessageBox::critical(this, staticTitle, tr("test_slot"));
-                m_Logger->WriteLog_char(ERROR_LOG, MYSELF_NAME_AXTU,  "ttttttttt", NULL);
+                QMessageBox::critical(this, staticTitle, tr("slotSaveOb"));
+                m_Logger->WriteLog_char(ERROR_LOG, MYSELF_NAME_AXTU,  "slotSaveOb", NULL);
 
 
 

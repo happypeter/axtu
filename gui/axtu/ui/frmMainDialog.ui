@@ -2648,7 +2648,7 @@
         <sender>btnSetupBlacklist</sender>
         <signal>clicked()</signal>
         <receiver>MainDialog</receiver>
-        <slot>test_slot()</slot>
+        <slot>slotSaveOb()</slot>
     </connection>
     <connection>
         <sender>btnBack</sender>
@@ -2710,7 +2710,7 @@
     <slot>slotSelectAll(int)</slot>
     <slot>slotChangeListPackage(QListViewItem *)</slot>
     <slot>slotSetupBlacklist()</slot>
-    <slot>test_slot()</slot>
+    <slot>slotSaveOb()</slot>
     <slot>slotClickPackage(QListViewItem*)</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
