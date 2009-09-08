@@ -561,14 +561,16 @@ for apply obsolete to gui/setup -b
 
 void classGui::slotSaveOb()
 {
-//	if(m_rpmEngine->SaveObInfo()==false)
+	if(m_rpmEngine->SaveObInfo()==false)
 /* strange thing is that if I call SaveObInfo here, axtu-gui will be killed, maybe its simply not save
    to call another object's member in a slot. 
    A: No, it is not true, see slotSetupBlackExit(), there is a engine fun inside
       and I put SaveObInfo() else where, still axtu-gui is killed
+      Now I run make install again on the top dir, then everything is OK
+      so its becase the binary interface is strange because I did not update the binary properly
  */
 	{
-                QMessageBox::critical(this, staticTitle, tr("if(SaveObInfo()==false)"));
+                QMessageBox::critical(this, staticTitle, tr("gogogogogogogo"));
                 m_Logger->WriteLog_char(ERROR_LOG, MYSELF_NAME_AXTU,  "if(SaveObInfo()==false)", NULL);
 	}
 
