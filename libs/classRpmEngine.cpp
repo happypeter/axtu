@@ -4597,7 +4597,7 @@ bool classRpmEngine::SaveObInfo()
                 if((*it)->obsoleteName[0]) //if here is for the sake of getting rid of names with no obsoletee
                 {       
 			string strObname;
-			strObname="+"+(string)((*it)->name);
+			strObname="+"+(string)((*it)->name)+" ";
 			obinfo<<strObname;
                 }
         }
