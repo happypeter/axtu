@@ -4591,17 +4591,17 @@ bool classRpmEngine::SaveObInfo()
                 for(i=0;(*it)->obsoleteName[i];i++) //refer to how they use provideName
                 {	
 			string strName;
-			strName="~"+(string)((*it)->obsoleteName[i]);
+			strName=(string)((*it)->obsoleteName[i]) + " ";
 			obinfo<<strName;
                 }
                 if((*it)->obsoleteName[0]) //if here is for the sake of getting rid of names with no obsoletee
                 {       
 			string strObname;
-			strObname="@"+(string)((*it)->name);
+			strObname="+"+(string)((*it)->name);
 			obinfo<<strObname;
                 }
         }
-	myfile.close();
+	obinfo.close();
 	return true;
 }
 
