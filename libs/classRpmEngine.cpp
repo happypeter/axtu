@@ -4582,10 +4582,8 @@ void 	classRpmEngine::SetNetwork(classNetwork *network)
 
 bool classRpmEngine::SaveObInfo()
 {
-  ofstream myfile;
-  myfile.open ("/var/tmp/obinfo.tmp");
-
-
+	ofstream obinfo;
+	obinfo.open ("/var/tmp/obinfo.tmp");
 	int i;
         vector<structRPMInfo*>::iterator it;
         for(it=m_vectorRPMInfo.begin();it!=m_vectorRPMInfo.end();it++)
@@ -4594,20 +4592,17 @@ bool classRpmEngine::SaveObInfo()
                 {	
 			string strName;
 			strName="~"+(string)((*it)->obsoleteName[i]);
-			myfile<<strName;
+			obinfo<<strName;
                 }
                 if((*it)->obsoleteName[0]) //if here is for the sake of getting rid of names with no obsoletee
                 {       
 			string strObname;
-                        strObname="@"+(string)((*it)->name);
-                        myfile<<strObname;
+			strObname="@"+(string)((*it)->name);
+			obinfo<<strObname;
                 }
-
         }
-  myfile.close();
-
-return true;
-
+	myfile.close();
+	return true;
 }
 
 //! Apply blacklist to update
