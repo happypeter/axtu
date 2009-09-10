@@ -262,8 +262,7 @@ classSetup::classSetup(int nMode, QWidget *parent, WFlags f ):frmSetup(parent,0,
 	btnRemoveBlacklist->setPaletteForegroundColor(QColor(FG_COLOR));
 	
 	btnAddAdditionalBlacklist->setPaletteBackgroundColor(QColor(BG_COLOR));
-	btnAddAdditionalBlacklist->setPaletteForegroundColor(QColor(FG_COLOR));
-	
+	btnAddAdditionalBlacklist->setPaletteForegroundColor(QColor(FG_COLOR));	
 	labelDate->setPaletteBackgroundColor(QColor(BG_COLOR));
 	labelDate->setPaletteForegroundColor(QColor(FG_COLOR));
 	
@@ -774,6 +773,7 @@ int classSetup::ReadLocalHeaderInfo()
 }
 
 //! Add black list.
+//when you click the >>> button
 void classSetup::slotAddBlacklist()
 {	
 	string strItem;
@@ -789,6 +789,8 @@ void classSetup::slotAddBlacklist()
 				{
 					lstBlacklist->insertItem(strItem);
 					m_configBlacklistUpdate->SetOption("blacklist-update", strItem, "0");
+					m_configBlacklistUpdate->SetOption("blacklist-update", "sos-peter", "0");
+					//now I see this is actually the right place to added obsoleter
 					m_bConfigEdited = true;
 					btnApply->setEnabled(true);
 				}
