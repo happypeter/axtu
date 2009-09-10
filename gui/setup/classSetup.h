@@ -81,7 +81,6 @@ public:
 	virtual void slotAdditionalCancel();	
 	string m_strText;
 	bool m_bResult;
-	bool ReadObinfo();	
 private:
 	
 };
@@ -136,7 +135,8 @@ public:
 	virtual void slotHttpPortEdit(const QString&);
 	virtual void slotHttpsPortEdit(const QString&);
 	int ChangeProxyValue();
-	
+	string ReadObinfo(string strObsoletee);
+
 private: 
 	int m_nMode;
 	QString m_strOldHttpPort;

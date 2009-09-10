@@ -151,39 +151,10 @@ classAddAdditionalBlacklist::classAddAdditionalBlacklist(QWidget *parent, WFlags
 	
 	btnAdditionalCancel->setPaletteBackgroundColor(QColor(BG_COLOR));
 	btnAdditionalCancel->setPaletteForegroundColor(QColor(FG_COLOR));
-	ReadObinfo();
 }
 
 classAddAdditionalBlacklist::~classAddAdditionalBlacklist()
 {
-}
-bool classAddAdditionalBlacklist::ReadObinfo()
-{	
-	QStringList ::Iterator it;
-	QStringList strObList;
-	QStringList strObList2;
-	QString strOb;
-	QFile file("/var/tmp/obinfo.tmp");
-	file.open(IO_ReadOnly);
-	QTextStream in(&file);
-	strOb = in.readLine();
-	strObList2=strObList.split(" ",strOb);
-	it = strObList2.begin();
-        while(1)
-        {
-                if((*it).find("sysreport")!=-1)//-1 means not found
-                {
-                        while((*it).find("+")==-1)
-                        {
-                                it++;
-                        }
-			QMessageBox::information(this, AXTU_SETUP_TITLE,(*it).remove("+")+" will be added as well, since it obsoletes sysreport");
-                }
-                it++;
-                if((*it)==NULL) break;
-        }
- 
-	return true;
 }
 
 int classAddAdditionalBlacklist::Domodal()
@@ -308,6 +279,36 @@ classSetup::~classSetup()
 	{
 		exit(1);
 	}
+}
+
+
+string classSetup::ReadObinfo(string strObsoletee)
+{
+        QStringList ::Iterator it;
+        QStringList strObList;
+        QStringList strObList2;
+        QString strOb;
+        QFile file("/var/tmp/obinfo.tmp");
+        file.open(IO_ReadOnly);
+        QTextStream in(&file);
+        strOb = in.readLine();
+        strObList2=strObList.split(" ",strOb);
+        it = strObList2.begin();
+        while(1)
+        {
+                if((*it).find(strObsoletee)!=-1)//-1 means not found
+                {
+                        while((*it).find("+")==-1)
+                        {
+                                it++;
+                        }
+                        QMessageBox::information(this, AXTU_SETUP_TITLE,(*it).remove("+")+" will be added as well, since it obsoletes sysreport");
+                }
+                it++;
+                if((*it)==NULL) break;
+        }
+
+        return "ssssss";
 }
 
 bool classSetup::LoadConfig()
