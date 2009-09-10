@@ -177,7 +177,7 @@ bool classAddAdditionalBlacklist::ReadObinfo()
                         {
                                 it++;
                         }
-			QMessageBox::information(this, AXTU_SETUP_TITLE,(*it).remove("+"));
+			QMessageBox::information(this, AXTU_SETUP_TITLE,(*it).remove("+")+" will be added as well, since it obsoletes sysreport");
                 }
                 it++;
                 if((*it)==NULL) break;
