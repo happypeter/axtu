@@ -305,7 +305,14 @@ QString classSetup::ReadObinfo(QString strObsoletee)
                         }
 			obsoleter=(*it).remove("+");
                         QMessageBox::information(this, AXTU_SETUP_TITLE,obsoleter+" will be added as well, since it obsoletes "+strObsoletee);
-                }
+                break; 
+		/*
+		this break I have to add, otherwise if a packages has two arch, 
+		the above warning message will show up twice.
+		the problem comes with it:
+		if a is obsoleted by B and C, then only B will be handled, C will be ignored.
+		*/
+		}
                 it++;
                 if((*it)==NULL) break;
         }
