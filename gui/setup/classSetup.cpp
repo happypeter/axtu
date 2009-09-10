@@ -29,6 +29,7 @@
 #include <qfiledialog.h>
 #include <qdatetimeedit.h>
 #include <qlabel.h>
+#include <qfile.h>
 #include <stdio.h>
 #include <exception>
 #include <commondef.h>
@@ -36,7 +37,6 @@
 
 char strDubugMsg[MAX_STRING];
 
- 
 classEditServer::classEditServer(QWidget *parent, WFlags f ):frmEditServer(parent,0,FALSE,f)
 {
 	this->setIcon(QPixmap(DEFAULT_ICON));
@@ -137,9 +137,11 @@ QString classEditServer::GetURL()
 
 /*!
 @brief Add Additioanl Blacklist Dialog Class .
+this class is created when you clicked the "Add package names" button
 */
 classAddAdditionalBlacklist::classAddAdditionalBlacklist(QWidget *parent, WFlags f ):frmAddAdditionalBlacklist(parent,0,FALSE,f)
-{	
+{
+	
 	this->setIcon(QPixmap(DEFAULT_ICON));
 	this->setCaption(AXTU_SETUP_TITLE);
 	this->setPaletteBackgroundColor(QColor(BG_COLOR));
@@ -149,10 +151,26 @@ classAddAdditionalBlacklist::classAddAdditionalBlacklist(QWidget *parent, WFlags
 	
 	btnAdditionalCancel->setPaletteBackgroundColor(QColor(BG_COLOR));
 	btnAdditionalCancel->setPaletteForegroundColor(QColor(FG_COLOR));
+	ReadObinfo();
 }
 
 classAddAdditionalBlacklist::~classAddAdditionalBlacklist()
 {
+}
+bool classAddAdditionalBlacklist::ReadObinfo()
+{	
+	QStringList ::Iterator it;
+	QStringList strObList;
+	QStringList strObList2;
+	QString strOb;
+	QFile file("/var/tmp/obinfo.tmp");
+	file.open(IO_ReadOnly);
+	QTextStream in(&file);
+	strOb = in.readLine();
+	strObList2=strObList.split(" ",strOb);
+	it = strObList2.begin(); 
+	QMessageBox::information(this, AXTU_SETUP_TITLE, *it);
+	return true;
 }
 
 int classAddAdditionalBlacklist::Domodal()
@@ -172,7 +190,7 @@ void classAddAdditionalBlacklist::slotAdditionalOk()
 	m_strText = (const char *)edtBlacklist->text();
 	m_bResult = true;
 	if (m_strText.length() <= 0)
-	{
+	{	
 		QMessageBox::information(this, AXTU_SETUP_TITLE, tr("Value is not correct."));
 		return;
 	}
@@ -804,7 +822,7 @@ void classSetup::slotRemoveBlacklist()
 
 //! Add Additional black list.
 void classSetup::slotAddAdditionalBlacklist()
-{
+{	
 	classAddAdditionalBlacklist dlgBlacklist(this, Qt::WStyle_Customize | Qt::WStyle_NormalBorder);
 	dlgBlacklist.setCaption(AXTU_SETUP_TITLE);
 	dlgBlacklist.Domodal();

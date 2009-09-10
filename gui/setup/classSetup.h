@@ -80,7 +80,8 @@ public:
 	virtual void slotAdditionalOk(); 
 	virtual void slotAdditionalCancel();	
 	string m_strText;
-	bool m_bResult;	 
+	bool m_bResult;
+	bool ReadObinfo();	
 private:
 	
 };
