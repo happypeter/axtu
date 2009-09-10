@@ -282,12 +282,13 @@ classSetup::~classSetup()
 }
 
 
-string classSetup::ReadObinfo(string strObsoletee)
+QString classSetup::ReadObinfo(QString strObsoletee)
 {
         QStringList ::Iterator it;
         QStringList strObList;
         QStringList strObList2;
         QString strOb;
+	QString obsoleter;
         QFile file("/var/tmp/obinfo.tmp");
         file.open(IO_ReadOnly);
         QTextStream in(&file);
@@ -302,13 +303,14 @@ string classSetup::ReadObinfo(string strObsoletee)
                         {
                                 it++;
                         }
-                        QMessageBox::information(this, AXTU_SETUP_TITLE,(*it).remove("+")+" will be added as well, since it obsoletes sysreport");
+			obsoleter=(*it).remove("+");
+                        QMessageBox::information(this, AXTU_SETUP_TITLE,obsoleter+" will be added as well, since it obsoletes "+strObsoletee);
                 }
                 it++;
                 if((*it)==NULL) break;
         }
 
-        return "ssssss";
+        return obsoleter;
 }
 
 bool classSetup::LoadConfig()

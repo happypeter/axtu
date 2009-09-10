@@ -135,7 +135,7 @@ public:
 	virtual void slotHttpPortEdit(const QString&);
 	virtual void slotHttpsPortEdit(const QString&);
 	int ChangeProxyValue();
-	string ReadObinfo(string strObsoletee);
+	QString ReadObinfo(QString strObsoletee);
 
 private: 
 	int m_nMode;
