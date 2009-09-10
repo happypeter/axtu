@@ -311,6 +311,8 @@ QString classSetup::ReadObinfo(QString strObsoletee)
 		the above warning message will show up twice.
 		the problem comes with it:
 		if a is obsoleted by B and C, then only B will be handled, C will be ignored.
+		FIX: I can modify classRpmEngine::SaveObInfo() to solove this, but since this case is rare
+		so I will do it in the futhure
 		*/
 		}
                 it++;
