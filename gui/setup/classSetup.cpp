@@ -792,8 +792,7 @@ void classSetup::slotAddBlacklist()
 				{
 					lstBlacklist->insertItem(strItem);
 					m_configBlacklistUpdate->SetOption("blacklist-update", strItem, "0");
-					m_configBlacklistUpdate->SetOption("blacklist-update", "sos-peter", "0");
-					//now I see this is actually the right place to added obsoleter
+					m_configBlacklistUpdate->SetOption("blacklist-update", ReadObinfo(strItem), "0");
 					m_bConfigEdited = true;
 					btnApply->setEnabled(true);
 				}
