@@ -168,8 +168,21 @@ bool classAddAdditionalBlacklist::ReadObinfo()
 	QTextStream in(&file);
 	strOb = in.readLine();
 	strObList2=strObList.split(" ",strOb);
-	it = strObList2.begin(); 
-	QMessageBox::information(this, AXTU_SETUP_TITLE, *it);
+	it = strObList2.begin();
+        while(1)
+        {
+                if((*it).find("sysreport")!=-1)//-1 means not found
+                {
+                        while((*it).find("+")==-1)
+                        {
+                                it++;
+                        }
+			QMessageBox::information(this, AXTU_SETUP_TITLE,(*it).remove("+"));
+                }
+                it++;
+                if((*it)==NULL) break;
+        }
+ 
 	return true;
 }
 
