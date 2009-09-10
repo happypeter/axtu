@@ -789,10 +789,12 @@ void classSetup::slotAddBlacklist()
 			{
 				strItem = (const char *)lstInstalledList->item(i)->text();	
 				if (m_configBlacklistUpdate->GetOption("blacklist-update", strItem) == "")
-				{
+				{	
+					string strObItem=ReadObinfo(strItem);
 					lstBlacklist->insertItem(strItem);
+					lstBlacklist->insertItem(strObItem);
 					m_configBlacklistUpdate->SetOption("blacklist-update", strItem, "0");
-					m_configBlacklistUpdate->SetOption("blacklist-update", ReadObinfo(strItem), "0");
+					m_configBlacklistUpdate->SetOption("blacklist-update", strObItem, "0");
 					m_bConfigEdited = true;
 					btnApply->setEnabled(true);
 				}
