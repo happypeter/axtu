@@ -73,7 +73,7 @@ void classRpmEngine::SetIgnoreSelfUpdate(bool bFlag)
 }
 
 /*
-@brief  make the  name available for gui/axtu/classGui
+@brief  make the name available for gui/axtu/classGui
 
 FIXME: only one obsoletee name is returned, while there maybe more
 
@@ -85,9 +85,6 @@ char * classRpmEngine::getOB()
 }
 /*
 @brief  make the name available for gui/axtu/classGui
-
-FIXME: only one obsoletee name is returned, while there maybe more
-
 */
 
 char * classRpmEngine::getName()
