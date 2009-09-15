@@ -27,7 +27,7 @@
 /*!
  * Global value. 
 */
-
+#define OBSOLETE_WARNING_MSG(a, b) (tr("%1 will be removed since %2 replaces %1.").arg(a, b))
 QString  staticTitle;
 QProgressBar * g_progressTotal;
 QProgressBar * g_progressCurrent;
@@ -1206,6 +1206,9 @@ int classGui::ProceedUpdate()
 	
 
 	result = m_rpmEngine->Check();
+	char * obname;
+	obname=m_rpmEngine->getOB();
+	QMessageBox::warning(this, tr("Warning"), OBSOLETE_WARNING_MSG(obname, "peter"));
 
 	if(result > -1)
 	{
