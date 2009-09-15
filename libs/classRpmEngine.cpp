@@ -73,7 +73,7 @@ void classRpmEngine::SetIgnoreSelfUpdate(bool bFlag)
 }
 
 /*
-@brief  make the name available for gui/axtu/classGui
+@brief  make the  name available for gui/axtu/classGui
 
 FIXME: only one obsoletee name is returned, while there maybe more
 
@@ -82,6 +82,17 @@ FIXME: only one obsoletee name is returned, while there maybe more
 char * classRpmEngine::getOB()
 {
 	return OBname[0];
+}
+/*
+@brief  make the name available for gui/axtu/classGui
+
+FIXME: only one obsoletee name is returned, while there maybe more
+
+*/
+
+char * classRpmEngine::getName()
+{
+        return obsoleter;
 }
 
 
@@ -2683,7 +2694,8 @@ int classRpmEngine::AddInstallElement(rpmts ts, Header h, const fnpyKey key, rpm
         headerGetEntry(h, RPMTAG_RELEASE, NULL, (void **)&strRelease, NULL);
         headerGetEntry(h, RPMTAG_ARCH, NULL, (void **)&strArch, NULL);
 	//do I need to free the pointers here?
-	OBname[0]=(char *)strName; 
+	OBname[0]="NOT_READY"; 
+	obsoleter=(char *)strName;
 	nRet = CheckKernel(strName);
         if ((nRet == 0)||(nRet == 2))
         {

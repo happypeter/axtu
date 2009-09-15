@@ -237,7 +237,9 @@ public:
 	classRpmEngine();
 	virtual ~classRpmEngine();
 	char * OBname[5];
-	char * getOB();	
+	char * getOB();
+	char * obsoleter;
+	char * getName();	
 	///////////////////
 	// Interface 
 	

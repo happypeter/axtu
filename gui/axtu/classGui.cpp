@@ -1207,8 +1207,10 @@ int classGui::ProceedUpdate()
 
 	result = m_rpmEngine->Check();
 	char * obname;
-	obname=m_rpmEngine->getOB();
-	QMessageBox::warning(this, tr("Warning"), OBSOLETE_WARNING_MSG(obname, "peter"));
+	char * name;
+	obname = m_rpmEngine->getOB();
+	name = m_rpmEngine->getName();
+	QMessageBox::warning(this, tr("Warning"), OBSOLETE_WARNING_MSG( obname, name));
 
 	if(result > -1)
 	{
