@@ -2686,12 +2686,18 @@ int classRpmEngine::AddInstallElement(rpmts ts, Header h, const fnpyKey key, rpm
         const char * strVersion;
         const char * strRelease;
         const char * strArch;
+	const char ** strObName, *ptr;
+
         headerGetEntry(h, RPMTAG_NAME, NULL, (void **)&strName, NULL);
         headerGetEntry(h, RPMTAG_VERSION, NULL, (void **)&strVersion, NULL);
         headerGetEntry(h, RPMTAG_RELEASE, NULL, (void **)&strRelease, NULL);
         headerGetEntry(h, RPMTAG_ARCH, NULL, (void **)&strArch, NULL);
 	//do I need to free the pointers here?
-	OBname[0]="NOT_READY"; 
+	//reading ob info---begin
+	headerGetEntry(h, RPMTAG_OBSOLETENAME, NULL, (void **)&strObName, NULL);
+	ptr = * strObName;
+	OBname[0]=strdup((char *)ptr);
+	//reading ob info---end
 	obsoleter=(char *)strName;
 	nRet = CheckKernel(strName);
         if ((nRet == 0)||(nRet == 2))
