@@ -7,6 +7,14 @@ layout: default
 
 AXTU is a system updater used for a linux distribution named Asianux.
 
+### github page
+
+<http://github.com/happypeter/axtu>
+
+### get the source
+
+    git clone git://github.com/happypeter/axtu.git
+
 <p><br /><b>Developer Contact Information:</b></p>
 
 <blockquote>
